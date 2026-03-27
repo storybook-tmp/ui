@@ -1,2 +1,5 @@
 sdlschema
 build-storybook.log
+
+*storybook.log
+storybook-static

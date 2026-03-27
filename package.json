@@ -11,8 +11,9 @@
     "eslint:strict": "pnpm -r eslint:strict",
     "eslint:fix": "pnpm -r eslint:fix",
     "prepare": "husky",
-    "storybook": "pnpm --filter spruce --filter parsley --filter @evg-ui/* --parallel run storybook --no-open & sleep 5 && storybook dev",
-    "test": "vitest --typecheck=false"
+    "storybook": "storybook dev -p 6006",
+    "test": "vitest --typecheck=false",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
     "@evg-ui/storybook-addon": "workspace:*",
@@ -20,6 +21,15 @@
     "husky": "9.1.7",
     "lint-staged": "16.1.5",
     "storybook": "^10.1.10",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "@chromatic-com/storybook": "^5.1.1",
+    "@storybook/addon-vitest": "^10.3.3",
+    "@storybook/addon-a11y": "^10.3.3",
+    "@storybook/addon-docs": "^10.3.3",
+    "@storybook/addon-onboarding": "^10.3.3",
+    "eslint-plugin-storybook": "^10.3.3",
+    "playwright": "^1.58.2",
+    "@vitest/browser": "3.2.4",
+    "@vitest/coverage-v8": "3.2.4"
   }
 }
