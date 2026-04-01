@@ -12,6 +12,11 @@ const config: StorybookConfig = {
   ],
   framework: "@storybook/react-vite",
   viteFinal: async (viteConfig) => {
+    viteConfig.resolve = viteConfig.resolve ?? {};
+    viteConfig.resolve.alias = {
+      ...(viteConfig.resolve.alias ?? {}),
+      "@emotion/server": "@emotion/css",
+    };
     viteConfig.plugins = [...(viteConfig.plugins ?? []), tsconfigPaths()];
     return viteConfig;
   },
