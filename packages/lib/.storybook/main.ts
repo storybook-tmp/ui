@@ -1,8 +1,11 @@
 import type { StorybookConfig } from "@storybook/react-vite";
-import tsconfigPaths from "vite-tsconfig-paths";
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)", "../../eval-results/*.mdx"],
+  stories: [
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../../eval-results/*.mdx",
+  ],
   addons: [
     "@chromatic-com/storybook",
     "@storybook/addon-vitest",
@@ -11,14 +14,6 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
   ],
   framework: "@storybook/react-vite",
-  viteFinal: async (viteConfig) => {
-    viteConfig.resolve = viteConfig.resolve ?? {};
-    viteConfig.resolve.alias = {
-      ...(viteConfig.resolve.alias ?? {}),
-      "@emotion/server": "@emotion/css",
-    };
-    viteConfig.plugins = [...(viteConfig.plugins ?? []), tsconfigPaths()];
-    return viteConfig;
-  },
 };
+
 export default config;
