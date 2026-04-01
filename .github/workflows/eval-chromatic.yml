@@ -1,0 +1,86 @@
+name: Eval Chromatic
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  chromatic:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          if [ -f pnpm-lock.yaml ]; then
+            corepack enable
+            pnpm install --no-frozen-lockfile
+          elif [ -f yarn.lock ]; then
+            corepack enable
+            if [ -f .yarnrc.yml ]; then yarn install --no-immutable; else yarn install; fi
+          elif [ -f bun.lock ] || [ -f bun.lockb ]; then
+            curl -fsSL https://bun.sh/install | bash
+            export PATH="$HOME/.bun/bin:$PATH"
+            bun install
+          else
+            npm install --ignore-scripts
+          fi
+
+      - name: Run Chromatic
+        working-directory: .
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        run: npx chromatic --exit-zero-on-changes --diagnostics-file chromatic-diagnostics.json
+
+      - name: Upload eval summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-summary
+          path: eval-results/summary.json
+          if-no-files-found: ignore
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-screenshots
+          path: |
+            **/*.chromium.png
+          if-no-files-found: ignore
+
+      - name: Upload Chromatic diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: chromatic-diagnostics
+          path: ./chromatic-diagnostics.json
+          if-no-files-found: ignore
+
+      - name: Comment Chromatic links
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('node:fs');
+            const diagnosticsPath = './chromatic-diagnostics.json';
+            if (!fs.existsSync(diagnosticsPath)) return;
+            const diagnostics = JSON.parse(fs.readFileSync(diagnosticsPath, 'utf8'));
+            const summaryUrl = 'https://github.com/' + context.repo.owner + '/' + context.repo.repo + '/blob/' + context.payload.pull_request.head.ref + '/eval-results/summary.json';
+            const marker = '<!-- storybook-eval-chromatic -->';
+            const body = [marker, '## Chromatic', '', '- Published Storybook: ' + (diagnostics.storybookUrl ?? 'n/a'), '- Build: ' + (diagnostics.webUrl ?? 'n/a'), '- Summary: ' + summaryUrl].join('\n');
+            const comments = await github.paginate(github.rest.issues.listComments, { owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number });
+            const existing = comments.find((comment) => comment.body?.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({ owner: context.repo.owner, repo: context.repo.repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number, body });
+            }

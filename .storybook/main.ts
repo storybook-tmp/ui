@@ -8,7 +8,9 @@ const getAbsolutePath = (value: string) => {
 
 export default {
   addons: [getAbsolutePath("@evg-ui/storybook-addon")],
-  stories: ["./README.mdx"],
+  stories: ["./README.mdx",
+    '../eval-results/*.mdx'
+  ],
   framework: {
     name: getAbsolutePath("@storybook/react-vite"),
   },
