@@ -1,0 +1,40 @@
+import summary from '../../../../eval-results/summary.json';
+
+# Eval Summary
+
+{summary.empty ? (
+  <p>No eval results yet.</p>
+) : (
+  <>
+    <table>
+      <tbody>
+        <tr><td><strong>Project</strong></td><td>{summary.project.name}</td></tr>
+        <tr><td><strong>Prompt</strong></td><td>{summary.prompt}</td></tr>
+        <tr><td><strong>Agent</strong></td><td>{summary.variant.agent}</td></tr>
+        <tr><td><strong>Model</strong></td><td>{summary.variant.model}</td></tr>
+        <tr><td><strong>Effort</strong></td><td>{summary.variant.effort}</td></tr>
+        <tr><td><strong>Score</strong></td><td>{summary.score.score}</td></tr>
+        <tr><td><strong>Build</strong></td><td>{summary.grade.buildSuccess ? 'PASS' : 'FAIL'}</td></tr>
+        <tr><td><strong>TypeScript errors</strong></td><td>{summary.grade.typeCheckErrors}</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Changed Files</h2>
+    <ul>
+      {summary.grade.fileChanges.map((change) => (
+        <li key={change.path}>
+          <code>{change.gitStatus}</code> <code>{change.path}</code>
+        </li>
+      ))}
+    </ul>
+
+    <h2>Screenshots</h2>
+    <ul>
+      {(summary.publish?.screenshots ?? []).map((screenshot) => (
+        <li key={screenshot.imagePath}>
+          <code>{screenshot.storyFilePath}</code> → <code>{screenshot.imagePath}</code>
+        </li>
+      ))}
+    </ul>
+  </>
+)}

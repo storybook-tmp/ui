@@ -1,0 +1,23 @@
+{
+  "empty": true,
+  "project": {
+    "name": "evergreen-ci"
+  },
+  "prompt": "",
+  "variant": {
+    "agent": "",
+    "model": "",
+    "effort": ""
+  },
+  "score": {
+    "score": 0
+  },
+  "grade": {
+    "buildSuccess": false,
+    "typeCheckErrors": 0,
+    "fileChanges": []
+  },
+  "publish": {
+    "screenshots": []
+  }
+}
