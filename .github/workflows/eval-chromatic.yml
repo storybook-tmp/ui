@@ -39,7 +39,7 @@ jobs:
           fi
 
       - name: Run Chromatic
-        working-directory: .
+        working-directory: packages/lib
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
         run: npx chromatic --exit-zero-on-changes --diagnostics-file chromatic-diagnostics.json
@@ -63,7 +63,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: chromatic-diagnostics
-          path: ./chromatic-diagnostics.json
+          path: packages/lib/chromatic-diagnostics.json
           if-no-files-found: ignore
 
       - name: Comment Chromatic links
@@ -71,7 +71,7 @@ jobs:
         with:
           script: |
             const fs = require('node:fs');
-            const diagnosticsPath = './chromatic-diagnostics.json';
+            const diagnosticsPath = 'packages/lib/chromatic-diagnostics.json';
             if (!fs.existsSync(diagnosticsPath)) return;
             const diagnostics = JSON.parse(fs.readFileSync(diagnosticsPath, 'utf8'));
             const summaryUrl = 'https://github.com/' + context.repo.owner + '/' + context.repo.repo + '/blob/' + context.payload.pull_request.head.ref + '/eval-results/summary.json';
