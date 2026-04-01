@@ -11,7 +11,7 @@ const dirname =
     ? __dirname
     : path.dirname(fileURLToPath(import.meta.url));
 const playwrightProviderOptions =
-  process.env.STORYBOOK_TEST_SCREENSHOTS_RETINA === "true"
+  process.env.STORYBOOK_TEST_SCREENSHOTS === "true"
     ? { contextOptions: { deviceScaleFactor: 2 } }
     : {};
 
