@@ -1,13 +1,10 @@
 import type { Preview } from "@storybook/react-vite";
+import { createElement } from "react";
 import { MemoryRouter } from "react-router-dom";
 
 const preview: Preview = {
   decorators: [
-    (Story) => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
-    ),
+    (Story) => createElement(MemoryRouter, null, createElement(Story)),
   ],
   parameters: {
     controls: {
