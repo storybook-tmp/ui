@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)", "../../eval-results/*.mdx"],
@@ -10,5 +11,9 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
   ],
   framework: "@storybook/react-vite",
+  viteFinal: async (viteConfig) => {
+    viteConfig.plugins = [...(viteConfig.plugins ?? []), tsconfigPaths()];
+    return viteConfig;
+  },
 };
 export default config;
