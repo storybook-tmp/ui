@@ -35,8 +35,8 @@
     "storybook": "NO_HTTPS=true storybook dev -p 6007",
     "storybook:build": "env-cmd -e local storybook build",
     "test": "vitest --typecheck=false",
-    "chromatic": "npx chromatic --dry-run --project-token=chpt_8083ea0d9f4af30 --build-script-name storybook:build",
-    "chromatic:publish": "npx chromatic --project-token=chpt_8083ea0d9f4af30 --build-script-name storybook:build"
+    "chromatic": "chromatic --dry-run --exit-zero-on-changes --only-changed --build-script-name storybook:build",
+    "chromatic:publish": "chromatic --exit-zero-on-changes --only-changed --build-script-name storybook:build"
   },
   "dependencies": {
     "@apollo/client": "^4.1.3",

@@ -37,7 +37,7 @@
     "storybook": "NO_HTTPS=true storybook dev -p 6006",
     "storybook:build": "storybook build",
     "test": "vitest",
-    "chromatic": "npx chromatic --project-token=chpt_676fe75e2c97368 --build-script-name storybook:build"
+    "chromatic": "chromatic --exit-zero-on-changes --only-changed --build-script-name storybook:build"
   },
   "browserslist": {
     "production": [

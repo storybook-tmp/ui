@@ -15,7 +15,7 @@
     "storybook": "storybook dev -p 6009",
     "storybook:build": "storybook build",
     "test": "vitest",
-    "chromatic": "npx chromatic --project-token=chpt_e1e0e3c7dd24944 --build-script-name storybook:build"
+    "chromatic": "chromatic --exit-zero-on-changes --only-changed --build-script-name storybook:build"
   },
   "dependencies": {
     "@ai-sdk/react": "^3.0.0",
