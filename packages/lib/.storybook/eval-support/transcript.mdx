@@ -1,7 +1,7 @@
-import summary from '../../../../eval-results/summary.json';
-import transcript from '../../../../eval-results/transcript.json';
+{/* Transcript renderer copied directly from ~/code/github/mcp/eval/templates/result-docs/transcript.tsx and transcript.types.ts */}
+import data from '../../../../eval-results/data.json';
 import { Transcript } from './transcript';
 
 # Transcript
 
-<Transcript summary={summary} transcript={transcript} />
+<Transcript {...data.docs.transcript} />

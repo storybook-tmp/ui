@@ -17,16 +17,16 @@
   "devDependencies": {
     "@evg-ui/storybook-addon": "workspace:*",
     "@chromatic-com/storybook": "^5.1.1",
-    "@storybook/addon-a11y": "0.0.0-pr-34421-sha-e9a58682",
-    "@storybook/addon-onboarding": "0.0.0-pr-34421-sha-e9a58682",
-    "@storybook/addon-vitest": "0.0.0-pr-34421-sha-e9a58682",
-    "@storybook/react-vite": "0.0.0-pr-34421-sha-e9a58682",
+    "@storybook/addon-a11y": "0.0.0-pr-34421-sha-0f73e3a9",
+    "@storybook/addon-onboarding": "0.0.0-pr-34421-sha-0f73e3a9",
+    "@storybook/addon-vitest": "0.0.0-pr-34421-sha-0f73e3a9",
+    "@storybook/react-vite": "0.0.0-pr-34421-sha-0f73e3a9",
     "@vitest/browser": "3.2.4",
     "@vitest/coverage-v8": "3.2.4",
     "husky": "9.1.7",
     "lint-staged": "16.4.0",
     "playwright": "^1.58.2",
-    "storybook": "0.0.0-pr-34421-sha-e9a58682",
+    "storybook": "0.0.0-pr-34421-sha-0f73e3a9",
     "vitest": "^3.2.4"
   }
 }
