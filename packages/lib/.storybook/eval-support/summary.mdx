@@ -1,31 +1,52 @@
-import data from '../../../../eval-results/data.json';
+import {
+  changedFiles,
+  emptySummaryText,
+  ghostStoryRows,
+  hasEvalData,
+  summaryRows,
+} from './eval-data.ts';
 
 # Eval Summary
 
-<table>
-  <tbody>
-    <tr><td><strong>Project</strong></td><td>{data.project.name}</td></tr>
-    <tr><td><strong>ID</strong></td><td>{data.id}</td></tr>
-    <tr><td><strong>Prompt</strong></td><td>{data.prompt.name}</td></tr>
-    <tr><td><strong>Agent</strong></td><td>{data.variant.agent}</td></tr>
-    <tr><td><strong>Model</strong></td><td>{data.variant.model}</td></tr>
-    <tr><td><strong>Effort</strong></td><td>{data.variant.effort}</td></tr>
-    <tr><td><strong>Score</strong></td><td>{data.score.score}</td></tr>
-    <tr><td><strong>Build</strong></td><td>{data.grade.buildSuccess ? 'PASS' : 'FAIL'}</td></tr>
-    <tr><td><strong>TypeScript errors</strong></td><td>{data.grade.typeCheckErrors}</td></tr>
-    <tr><td><strong>Ghost stories</strong></td><td>{data.grade.ghostStories ? `${data.grade.ghostStories.passed}/${data.grade.ghostStories.total} (${Math.round(data.grade.ghostStories.successRate * 100)}%)` : '-'}</td></tr>
-    <tr><td><strong>Screenshots</strong></td><td>{data.screenshots.length}</td></tr>
-    <tr><td><strong>Duration</strong></td><td>{Math.round(data.execution.duration)}s</td></tr>
-    <tr><td><strong>Cost</strong></td><td>{data.execution.cost == null ? '-' : `$${data.execution.cost.toFixed(2)}`}</td></tr>
-  </tbody>
-</table>
+{!hasEvalData ? (
+  <blockquote>{emptySummaryText}</blockquote>
+) : (
+  <>
+    <table>
+      <tbody>
+        {summaryRows.map((row) => (
+          <tr key={row.label}>
+            <td><strong>{row.label}</strong></td>
+            <td>
+              {row.code ? (
+                <code style={{ wordBreak: "break-word" }}>{row.value}</code>
+              ) : (
+                row.value
+              )}
+            </td>
+          </tr>
+        ))}
+        {ghostStoryRows.map((row) => (
+          <tr key={row.label}>
+            <td><strong>{row.label}</strong></td>
+            <td>{row.value}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
 
-## Changed Files
+    ## Changed Files
 
-<ul>
-  {data.grade.fileChanges.map((change) => (
-    <li key={change.path}>
-      <code>{change.gitStatus}</code> <code>{change.path}</code>
-    </li>
-  ))}
-</ul>
+    {changedFiles.length === 0 ? (
+      <p>No file changes recorded.</p>
+    ) : (
+      <ul>
+        {changedFiles.map((change) => (
+          <li key={change.path}>
+            <code>{change.gitStatus}</code> <code>{change.path}</code>
+          </li>
+        ))}
+      </ul>
+    )}
+  </>
+)}
