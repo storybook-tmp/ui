@@ -1,0 +1,26 @@
+RUN  v4.1.2 /Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-02T16-43-32Z-7404f2aa/project/packages/lib
+
+11:50:32 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+ ✓ |storybook (chromium)| src/components/IconWithTooltip/IconWithTooltip.stories.tsx (2 tests) 538ms
+   ✓ Warning  460ms
+ ✓ |storybook (chromium)| src/components/PageSizeSelector/PageSizeSelector.stories.tsx (2 tests) 1287ms
+   ✓ Default  1159ms
+ ✓ |storybook (chromium)| src/components/FullPageLoad/FullPageLoad.stories.tsx (2 tests) 1458ms
+   ✓ Default  1330ms
+ ✓ |storybook (chromium)| src/components/Accordion/Accordion.stories.tsx (2 tests) 1317ms
+   ✓ Collapsed  1159ms
+ ✓ |storybook (chromium)| src/components/Badge/TestStatusBadge/TestStatusBadge.stories.tsx (2 tests) 1541ms
+   ✓ Passing  1387ms
+ ✓ |storybook (chromium)| src/components/Popconfirm/Popconfirm.stories.tsx (2 tests) 1350ms
+   ✓ Open Confirmation  1213ms
+ ✓ |storybook (chromium)| src/components/Badge/TaskStatusBadge/TaskStatusBadge.stories.tsx (2 tests) 1563ms
+   ✓ Succeeded  1438ms
+ ✓ |storybook (chromium)| src/components/TextInputWithGlyph/TextInputWithGlyph.stories.tsx (2 tests) 1422ms
+   ✓ With Icon  1346ms
+ ✓ |storybook (chromium)| src/components/TreeSelect/TreeSelect.stories.tsx (2 tests) 1418ms
+   ✓ Flat Options  1293ms
+
+ Test Files  9 passed (9)
+      Tests  18 passed (18)
+   Start at  23:50:32
+   Duration  6.09s (transform 0ms, setup 12.57s, import 2.97s, tests 11.89s, environment 0ms)
