@@ -36,6 +36,17 @@ export default defineConfig({
   ],
   resolve: {
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
+    alias: {
+      "@emotion/server/create-instance": path.resolve(dirname, "./config/emotion-server.browser.ts"),
+      "@emotion/server": path.resolve(dirname, "./config/emotion-server.browser.ts"),
+    },
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      define: {
+        global: 'globalThis',
+      },
+    },
   },
   test: {
     reporters: ["default", ...(process.env.CI === "true" ? ["junit"] : [])],
