@@ -26,6 +26,12 @@ const playwrightProviderOptions =
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
+  define: {
+    "process.env": JSON.stringify({
+      NODE_ENV: "test",
+      REACT_APP_RELEASE_STAGE: "local",
+    }),
+  },
   plugins: [
     tsconfigPaths(),
     react({
@@ -36,6 +42,15 @@ export default defineConfig({
   ],
   resolve: {
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
+    alias: {
+      // @emotion/server pulls in html-tokenize → buffer-from which needs
+      // Node's Buffer. It is SSR-only and not needed in the browser, so
+      // replace it with an empty module to avoid the ReferenceError.
+      "@emotion/server/create-instance": path.join(
+        dirname,
+        ".storybook/emotion-server-stub.js"
+      ),
+    },
   },
   test: {
     reporters: ["default", ...(process.env.CI === "true" ? ["junit"] : [])],
