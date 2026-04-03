@@ -26,6 +26,24 @@ const playwrightProviderOptions =
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
+  optimizeDeps: {
+    include: [
+      "@apollo/client/testing/react",
+      "@leafygreen-ui/badge",
+      "@leafygreen-ui/button",
+      "@leafygreen-ui/checkbox",
+      "@leafygreen-ui/icon",
+      "@leafygreen-ui/icon-button",
+      "@leafygreen-ui/leafygreen-provider",
+      "@leafygreen-ui/select",
+      "@leafygreen-ui/text-input",
+      "@leafygreen-ui/toast",
+      "@leafygreen-ui/tooltip",
+      "@leafygreen-ui/typography",
+      "query-string",
+      "react-router-dom",
+    ],
+  },
   plugins: [
     tsconfigPaths(),
     react({
