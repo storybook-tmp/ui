@@ -35,7 +35,24 @@ export default defineConfig({
     }),
   ],
   resolve: {
+    alias: {
+      "@emotion/server": "@emotion/css",
+    },
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
+  },
+  optimizeDeps: {
+    include: [
+      "@leafygreen-ui/badge",
+      "@leafygreen-ui/button",
+      "@leafygreen-ui/checkbox",
+      "@leafygreen-ui/guide-cue",
+      "@leafygreen-ui/icon-button",
+      "@leafygreen-ui/leafygreen-provider",
+      "@leafygreen-ui/select",
+      "@leafygreen-ui/toast",
+      "@leafygreen-ui/tooltip",
+      "query-string",
+    ],
   },
   test: {
     reporters: ["default", ...(process.env.CI === "true" ? ["junit"] : [])],
@@ -63,6 +80,7 @@ export default defineConfig({
         ],
         test: {
           name: "storybook",
+          setupFiles: "./config/vitest/setupStorybook.ts",
           browser: {
             enabled: true,
             headless: true,
