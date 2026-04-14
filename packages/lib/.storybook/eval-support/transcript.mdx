@@ -2,13 +2,6 @@
 import data from '../eval-results/data.json';
 import { Transcript } from './transcript';
 
-const transcript = data.docs?.transcript ?? {
-  prompt: '',
-  promptTokenCount: 0,
-  promptCost: 0,
-  messages: [],
-};
-
 # Transcript
 
-<Transcript {...transcript} />
+<Transcript {...(data.docs?.transcript ?? { prompt: '', promptTokenCount: 0, promptCost: 0, messages: [] })} />
