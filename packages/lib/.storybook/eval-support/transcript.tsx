@@ -17,10 +17,10 @@ import type {
 
 const formatJsonWithPreservedWhitespace = (obj: any): string => {
 	return JSON.stringify(obj, null, 2)
-		.replace(/\\\\\\\\n/g, '\\\\n')
 		.replace(/\\\\n/g, '\\n')
-		.replace(/\\\\\\\\t/g, '\\\\t')
-		.replace(/\\\\t/g, '\\t');
+		.replace(/\\n/g, '\n')
+		.replace(/\\\\t/g, '\\t')
+		.replace(/\\t/g, '\t');
 };
 
 const truncateText = (text: string, maxLength: number): string => {
@@ -33,7 +33,7 @@ const getPercentageStyle = (percentage: number): React.CSSProperties => {
 	const red = Math.round(245 + (248 - 245) * intensity);
 	const green = Math.round(245 * (1 - intensity));
 	const blue = Math.round(245 * (1 - intensity));
-	const bgColor = \`rgb(\${red}, \${green}, \${blue})\`;
+	const bgColor = `rgb(${red}, ${green}, ${blue})`;
 	const textColor = intensity > 0.4 ? '#ffffff' : '#666';
 	return { background: bgColor, color: textColor };
 };
@@ -127,7 +127,7 @@ const CodeBlock = ({
 					wordBreak: 'break-word',
 				}}
 			>
-				<code ref={codeRef} className={language ? \`language-\${language}\` : ''}>
+				<code ref={codeRef} className={language ? `language-${language}` : ''}>
 					{content}
 				</code>
 				{isTruncated && content.length > 500 && (
@@ -223,17 +223,17 @@ const FileDiff = ({
 	oldString: string;
 	newString: string;
 }) => {
-	const diff = \`--- a/\${filePath}
-+++ b/\${filePath}
-@@ -1,\${oldString.split('\\n').length} +1,\${newString.split('\\n').length} @@
-\${oldString
-	.split('\\n')
+	const diff = `--- a/${filePath}
++++ b/${filePath}
+@@ -1,${oldString.split('\n').length} +1,${newString.split('\n').length} @@
+${oldString
+	.split('\n')
 	.map((line) => '-' + line)
-	.join('\\n')}
-\${newString
-	.split('\\n')
+	.join('\n')}
+${newString
+	.split('\n')
 	.map((line) => '+' + line)
-	.join('\\n')}\`;
+	.join('\n')}`;
 
 	return (
 		<>
@@ -457,7 +457,7 @@ export const Transcript = (props: TranscriptProps) => {
 	useEffect(() => {
 		const script = document.createElement('script');
 		script.type = 'module';
-		script.textContent = \`import hljs from 'https://esm.sh/highlight.js@11.9.0'; window.hljs = hljs;\`;
+		script.textContent = `import hljs from 'https://esm.sh/highlight.js@11.9.0'; window.hljs = hljs;`;
 		document.head.appendChild(script);
 
 		const style = document.createElement('link');
@@ -502,7 +502,7 @@ export const Transcript = (props: TranscriptProps) => {
 			metadataCards.push({
 				title: 'Available Tools',
 				value: systemTurn.tools.length,
-				subvalue: mcpTools.length > 0 ? \`\${mcpTools.length} MCP tools\` : 'unknown',
+				subvalue: mcpTools.length > 0 ? `${mcpTools.length} MCP tools` : 'unknown',
 			});
 		}
 
@@ -512,10 +512,10 @@ export const Transcript = (props: TranscriptProps) => {
 				systemTurn.mcp_servers
 					.map(
 						(s) =>
-							\`<div style="display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; background-color: #f3f4f6; border-radius: 9999px; font-size: 0.875rem; margin-right: 0.5rem; margin-bottom: 0.5rem;">
-								<span title="\${s.status}" style="width: 8px; height: 8px; border-radius: 50%; background-color: \${s.status === 'connected' ? '#10b981' : s.status === 'unknown' ? '#6b7280' : '#ef4444'}; margin-right: 0.5rem;"></span>
-								\${s.name}
-							</div>\`,
+							`<div style="display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; background-color: #f3f4f6; border-radius: 9999px; font-size: 0.875rem; margin-right: 0.5rem; margin-bottom: 0.5rem;">
+								<span title="${s.status}" style="width: 8px; height: 8px; border-radius: 50%; background-color: ${s.status === 'connected' ? '#10b981' : s.status === 'unknown' ? '#6b7280' : '#ef4444'}; margin-right: 0.5rem;"></span>
+								${s.name}
+							</div>`,
 					)
 					.join('') +
 				'</div>';
@@ -594,7 +594,7 @@ export const Transcript = (props: TranscriptProps) => {
 				<Turn
 					type="prompt"
 					title="User Prompt"
-					tokenCount={\`\${promptTokenCount.toLocaleString()} tokens\`}
+					tokenCount={`${promptTokenCount.toLocaleString()} tokens`}
 					percentage={(promptTokenCount / totalMessageTokens) * 100}
 				>
 					<ContentSection label="Prompt">
@@ -625,7 +625,7 @@ export const Transcript = (props: TranscriptProps) => {
 							const percentage = (elapsedMs / totalTime) * 100;
 							elements.push(
 								<ElapsedTime
-									key={\`elapsed-\${index}\`}
+									key={`elapsed-${index}`}
 									elapsedMs={elapsedMs}
 									percentage={percentage}
 								/>,
@@ -637,7 +637,7 @@ export const Transcript = (props: TranscriptProps) => {
 				if (group.toolCall && group.toolResult) {
 					elements.push(
 						<ToolCallGroup
-							key={\`tool-\${index}\`}
+							key={`tool-${index}`}
 							toolCall={group.toolCall as AssistantMessage}
 							toolResult={group.toolResult as UserMessage}
 							totalMessageTokens={totalMessageTokens}
@@ -647,7 +647,7 @@ export const Transcript = (props: TranscriptProps) => {
 				} else if (group.turn) {
 					elements.push(
 						<TurnRenderer
-							key={\`turn-\${index}\`}
+							key={`turn-${index}`}
 							turn={group.turn}
 							totalMessageTokens={totalMessageTokens}
 						/>,
@@ -727,8 +727,8 @@ const ToolCallGroup = ({
 
 	const tokenCountStr =
 		toolCall.tokenCount && toolResult.tokenCount
-			? \`\${toolCall.tokenCount.toLocaleString()} + \${toolResult.tokenCount.toLocaleString()} tokens\`
-			: \`\${totalTokens.toLocaleString()} tokens\`;
+			? `${toolCall.tokenCount.toLocaleString()} + ${toolResult.tokenCount.toLocaleString()} tokens`
+			: `${totalTokens.toLocaleString()} tokens`;
 
 	return (
 		<Turn
@@ -765,7 +765,7 @@ const TurnRenderer = ({
 		<Turn
 			type={turn.type}
 			title={title}
-			tokenCount={turn.tokenCount ? \`\${turn.tokenCount.toLocaleString()} tokens\` : undefined}
+			tokenCount={turn.tokenCount ? `${turn.tokenCount.toLocaleString()} tokens` : undefined}
 			percentage={turn.tokenCount ? percentage : undefined}
 			isMCP={isMCP}
 		>
@@ -787,7 +787,7 @@ function getTurnTitle(turn: TranscriptMessage): string {
 
 	if (turn.type === 'user' && 'message' in turn && turn.message?.content) {
 		const toolResult = turn.message.content.find((c) => c.type === 'tool_result');
-		if (toolResult && 'tool_use_id' in toolResult) return \`Result: \${toolResult.tool_use_id}\`;
+		if (toolResult && 'tool_use_id' in toolResult) return `Result: ${toolResult.tool_use_id}`;
 	}
 
 	return 'subtype' in turn && turn.subtype ? turn.subtype : turn.type;
@@ -804,7 +804,7 @@ function extractToolAdditionalInfo(
 		const fullPath = toolUse.input.file_path || toolUse.input.path;
 		if (fullPath) {
 			return cwd && fullPath.startsWith(cwd)
-				? fullPath.substring(cwd.length).replace(/^\\//, '')
+				? fullPath.substring(cwd.length).replace(/^\//, '')
 				: fullPath;
 		}
 	}
@@ -969,4 +969,3 @@ function renderSystemOrResult(turn: TranscriptMessage): React.ReactNode {
 		</ContentSection>
 	);
 }
-

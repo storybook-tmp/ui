@@ -79,4 +79,3 @@ export interface TranscriptProps {
 	promptCost: number;
 	messages: TranscriptMessage[];
 }
-
