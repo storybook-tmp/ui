@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom/vitest";
 import "vitest-canvas-mock";
-import { vi } from "vitest";
+import { beforeEach, vi } from "vitest";
 
 // @ts-expect-error: Workaround for a bug in @testing-library/react.
 // It prevents Vitest's fake timers from functioning with user-event.
