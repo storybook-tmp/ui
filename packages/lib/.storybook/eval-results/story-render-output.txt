@@ -1,0 +1,2 @@
+[2m6:44:08 PM[22m [36m[1m[vite][22m[39m (client) Re-optimizing dependencies because vite config has changed
+JSON report written to /Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-03T11-28-58Z-3dee46eb/project/packages/lib/.storybook/eval-results/story-render-report.json
