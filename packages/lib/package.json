@@ -62,6 +62,7 @@
     "@graphql-codegen/cli": "6.2.1",
     "@graphql-codegen/typescript": "5.0.9",
     "@graphql-codegen/typescript-operations": "5.0.9",
+    "@leafygreen-ui/leafygreen-provider": "^5.0.4",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
@@ -71,14 +72,27 @@
     "@types/react-dom": "18.3.1",
     "@vitejs/plugin-react": "5.1.2",
     "babel-plugin-import-graphql": "^2.8.1",
+    "buffer": "^6.0.3",
     "chromatic": "^13.3.4",
     "eslint": "^9.39.1",
     "eslint-plugin-prettier": "^5.5.4",
+    "events": "^3.3.0",
+    "mockdate": "^3.0.5",
+    "msw": "^2.13.4",
+    "msw-storybook-addon": "^2.0.7",
     "prettier": "3.7.4",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
     "typescript": "~5.9.3",
+    "util": "^0.12.5",
     "vite": "7.3.1",
     "vite-tsconfig-paths": "^6.0.2",
     "vitest": "^4.1.2",
     "vitest-canvas-mock": "1.1.3"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

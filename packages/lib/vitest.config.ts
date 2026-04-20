@@ -10,6 +10,8 @@ const dirname =
   typeof __dirname !== "undefined"
     ? __dirname
     : path.dirname(fileURLToPath(import.meta.url));
+const resolvePackage = (specifier: string) =>
+  fileURLToPath(import.meta.resolve(specifier));
 const playwrightProviderOptions =
   process.env.STORYBOOK_TEST_SCREENSHOTS === "true"
     ? {
@@ -35,7 +37,34 @@ export default defineConfig({
     }),
   ],
   resolve: {
+    alias: {
+      events: resolvePackage("events/"),
+      process: resolvePackage("process/browser"),
+      stream: resolvePackage("stream-browserify"),
+      util: resolvePackage("util/"),
+    },
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
+  },
+  optimizeDeps: {
+    include: [
+      "@leafygreen-ui/badge",
+      "@leafygreen-ui/button",
+      "@leafygreen-ui/checkbox",
+      "@leafygreen-ui/guide-cue",
+      "@leafygreen-ui/icon",
+      "@leafygreen-ui/icon-button",
+      "@leafygreen-ui/leafygreen-provider",
+      "@leafygreen-ui/popover",
+      "@leafygreen-ui/search-input",
+      "@leafygreen-ui/skeleton-loader",
+      "@leafygreen-ui/table",
+      "@leafygreen-ui/text-input",
+      "@leafygreen-ui/toast",
+      "@leafygreen-ui/tooltip",
+      "@leafygreen-ui/typography",
+      "date-fns",
+      "query-string",
+    ],
   },
   test: {
     reporters: ["default", ...(process.env.CI === "true" ? ["junit"] : [])],
@@ -63,6 +92,7 @@ export default defineConfig({
         ],
         test: {
           name: "storybook",
+          setupFiles: "./config/vitest/setupStorybookTests.ts",
           browser: {
             enabled: true,
             headless: true,
