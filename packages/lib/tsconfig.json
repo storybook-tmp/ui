@@ -4,6 +4,8 @@
     "src",
     "test_utils/index.tsx",
     "test_utils/custom-queries.ts",
+    ".storybook/msw-handlers.ts",
+    "./config/vitest/setupStorybookTests.ts",
     "./config/vitest/setupTests.ts",
     ".storybook/preview.tsx",
     "src/**/*.d.ts",
