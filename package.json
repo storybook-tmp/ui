@@ -18,19 +18,19 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^5.1.1",
     "@evg-ui/storybook-addon": "workspace:*",
-    "@storybook/addon-a11y": "0.0.0-pr-34421-sha-8babe7bc",
-    "@storybook/addon-onboarding": "0.0.0-pr-34421-sha-8babe7bc",
-    "@storybook/addon-vitest": "0.0.0-pr-34421-sha-8babe7bc",
-    "@storybook/react-vite": "0.0.0-pr-34421-sha-8babe7bc",
+    "@storybook/addon-a11y": "0.0.0-pr-34297-sha-8ed43323",
+    "@storybook/addon-onboarding": "0.0.0-pr-34297-sha-8ed43323",
+    "@storybook/addon-vitest": "0.0.0-pr-34297-sha-8ed43323",
+    "@storybook/react-vite": "0.0.0-pr-34297-sha-8ed43323",
     "@vitest/browser": "4.1.2",
     "@vitest/browser-playwright": "4.1.2",
     "@vitest/coverage-v8": "4.1.2",
     "husky": "9.1.7",
     "lint-staged": "16.4.0",
     "playwright": "^1.58.2",
-    "storybook": "0.0.0-pr-34421-sha-8babe7bc",
+    "storybook": "0.0.0-pr-34297-sha-8ed43323",
     "vitest": "^4.1.2",
-    "@storybook/addon-docs": "0.0.0-pr-34421-sha-8babe7bc",
-    "eslint-plugin-storybook": "0.0.0-pr-34421-sha-8babe7bc"
+    "@storybook/addon-docs": "0.0.0-pr-34297-sha-8ed43323",
+    "eslint-plugin-storybook": "0.0.0-pr-34297-sha-8ed43323"
   }
 }
