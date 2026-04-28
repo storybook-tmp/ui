@@ -6,11 +6,13 @@
     "test_utils/custom-queries.ts",
     "./config/vitest/setupTests.ts",
     ".storybook/preview.tsx",
+    "src/**/*.stories.tsx",
     "src/**/*.d.ts",
     "vitest.d.ts"
   ],
   "compilerOptions": {
     "paths": {
+      "#.storybook/*": ["./.storybook/*"],
       "*": ["./src/*"]
     }
   },

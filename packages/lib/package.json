@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "imports": {
+    "#.storybook/*": "./.storybook/*"
+  },
   "scripts": {
     "check-types": "tsc -p tsconfig.json --noEmit",
     "eslint:fix": "pnpm eslint:strict --fix",
