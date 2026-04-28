@@ -35,7 +35,29 @@ export default defineConfig({
     }),
   ],
   resolve: {
+    alias: {
+      "@emotion/server/create-instance": path.join(
+        dirname,
+        ".storybook/emotion-server-stub.ts",
+      ),
+      "@emotion/server": path.join(
+        dirname,
+        ".storybook/emotion-server-stub.ts",
+      ),
+    },
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
+  },
+  define: {
+    "process.env": JSON.stringify({}),
+  },
+  optimizeDeps: {
+    include: [
+      "@emotion/react",
+      "@emotion/react/jsx-dev-runtime",
+      "react-router-dom",
+      "msw-storybook-addon",
+      "@leafygreen-ui/tokens",
+    ],
   },
   test: {
     reporters: ["default", ...(process.env.CI === "true" ? ["junit"] : [])],
