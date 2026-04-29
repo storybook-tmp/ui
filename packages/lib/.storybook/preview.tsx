@@ -1,6 +1,21 @@
 import type { Preview } from '@storybook/react-vite';
+import { initialize, mswLoader } from 'msw-storybook-addon';
+import { MemoryRouter } from 'react-router-dom';
+import { ToastProvider } from '../src/context/toast';
+
+initialize({ onUnhandledRequest: 'bypass' });
 
 const preview: Preview = {
+  decorators: [
+    (Story) => (
+      <MemoryRouter>
+        <ToastProvider>
+          <Story />
+        </ToastProvider>
+      </MemoryRouter>
+    ),
+  ],
+  loaders: [mswLoader],
   parameters: {
     controls: {
       matchers: {
