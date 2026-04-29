@@ -60,7 +60,28 @@ export default defineConfig({
           storybookTest({
             configDir: path.join(dirname, ".storybook"),
           }),
+          {
+            name: "emotion-server-stub",
+            enforce: "pre",
+            resolveId(id) {
+              if (
+                id === "@emotion/server/create-instance" ||
+                id === "@emotion/server"
+              ) {
+                return path.join(
+                  dirname,
+                  "config/vitest/emotion-server-stub.ts",
+                );
+              }
+            },
+          },
         ],
+        optimizeDeps: {
+          exclude: [
+            "@leafygreen-ui/emotion",
+            "@emotion/server",
+          ],
+        },
         test: {
           name: "storybook",
           browser: {
