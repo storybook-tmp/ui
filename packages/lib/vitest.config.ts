@@ -36,6 +36,12 @@ export default defineConfig({
   ],
   resolve: {
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
+    alias: {
+      "@emotion/server/create-instance": path.join(
+        dirname,
+        "config/emotion-server-stub.js",
+      ),
+    },
   },
   test: {
     reporters: ["default", ...(process.env.CI === "true" ? ["junit"] : [])],

@@ -1,0 +1,24 @@
+RUN  v4.1.2 /Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-02T16-22-18Z-9b9a9677/project/packages/lib
+
+11:30:49 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+ ✓ |storybook (chromium)| src/components/Popconfirm/Popconfirm.stories.tsx (2 tests) 852ms
+   ✓ Default  667ms
+ ✓ |storybook (chromium)| src/components/PageSizeSelector/PageSizeSelector.stories.tsx (2 tests) 948ms
+   ✓ Default  763ms
+ ✓ |storybook (chromium)| src/components/Pagination/Pagination.stories.tsx (2 tests) 771ms
+   ✓ Default  526ms
+ ✓ |storybook (chromium)| src/components/FullPageLoad/FullPageLoad.stories.tsx (2 tests) 1085ms
+   ✓ Default  840ms
+ ✓ |storybook (chromium)| src/components/Accordion/Accordion.stories.tsx (2 tests) 986ms
+   ✓ Default  745ms
+ ✓ |storybook (chromium)| src/components/TextInputWithGlyph/TextInputWithGlyph.stories.tsx (2 tests) 961ms
+   ✓ Default  763ms
+ ✓ |storybook (chromium)| src/components/TreeSelect/TreeSelect.stories.tsx (2 tests) 964ms
+   ✓ Default  773ms
+ ✓ |storybook (chromium)| src/components/Badge/TestStatusBadge/TestStatusBadge.stories.tsx (4 tests) 1218ms
+   ✓ Pass  832ms
+
+ Test Files  8 passed (8)
+      Tests  18 passed (18)
+   Start at  23:30:49
+   Duration  5.39s (transform 0ms, setup 9.33s, import 4.22s, tests 7.79s, environment 0ms)
