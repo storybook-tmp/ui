@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import { playwright } from "@vitest/browser-playwright";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { defineConfig } from "vitest/config";
+import { nodePolyfills } from "vite-plugin-node-polyfills";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -26,7 +27,36 @@ const playwrightProviderOptions =
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
+  optimizeDeps: {
+    include: [
+      "@emotion/react",
+      "@emotion/styled",
+      "@leafygreen-ui/badge",
+      "@leafygreen-ui/button",
+      "@leafygreen-ui/checkbox",
+      "@leafygreen-ui/guide-cue",
+      "@leafygreen-ui/icon",
+      "@leafygreen-ui/icon-button",
+      "@leafygreen-ui/palette",
+      "@leafygreen-ui/select",
+      "@leafygreen-ui/text-input",
+      "@leafygreen-ui/toast",
+      "@leafygreen-ui/tooltip",
+      "@leafygreen-ui/typography",
+      "date-fns",
+      "js-cookie",
+      "vite-plugin-node-polyfills/shims/buffer",
+      "vite-plugin-node-polyfills/shims/global",
+      "vite-plugin-node-polyfills/shims/process",
+    ],
+  },
   plugins: [
+    nodePolyfills({
+      include: ["buffer", "events", "stream", "util"],
+      globals: {
+        Buffer: true,
+      },
+    }),
     tsconfigPaths(),
     react({
       babel: {

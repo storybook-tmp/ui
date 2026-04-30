@@ -1,6 +1,19 @@
-import type { Preview } from '@storybook/react-vite';
+import type { Preview } from "@storybook/react-vite";
+import { MemoryRouter } from "react-router-dom";
+import { ToastProvider } from "../src/context/toast";
 
 const preview: Preview = {
+  decorators: [
+    (Story) => (
+      <MemoryRouter>
+        <ToastProvider>
+          <div style={{ padding: 16 }}>
+            <Story />
+          </div>
+        </ToastProvider>
+      </MemoryRouter>
+    ),
+  ],
   parameters: {
     controls: {
       matchers: {
@@ -9,7 +22,7 @@ const preview: Preview = {
       },
     },
     a11y: {
-      test: 'todo',
+      test: "todo",
     },
   },
 };
