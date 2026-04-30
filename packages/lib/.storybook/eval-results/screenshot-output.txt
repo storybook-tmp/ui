@@ -1,0 +1,23 @@
+RUN  v4.1.2 /Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-03T10-49-51Z-f02430d2/project/packages/lib
+
+ ✓ |storybook (chromium)| src/components/Badge/TaskStatusBadge/TaskStatusBadge.stories.tsx (2 tests) 808ms
+   ✓ Succeeded  602ms
+ ✓ |storybook (chromium)| src/components/PageSizeSelector/PageSizeSelector.stories.tsx (2 tests) 645ms
+   ✓ Default  440ms
+ ✓ |storybook (chromium)| src/components/Badge/TestStatusBadge/TestStatusBadge.stories.tsx (2 tests) 819ms
+   ✓ Passing  612ms
+ ✓ |storybook (chromium)| src/components/Accordion/Accordion.stories.tsx (2 tests) 860ms
+   ✓ Collapsed  603ms
+ ✓ |storybook (chromium)| src/components/Popconfirm/Popconfirm.stories.tsx (2 tests) 757ms
+   ✓ Uncontrolled  487ms
+ ✓ |storybook (chromium)| src/components/TextInputWithGlyph/TextInputWithGlyph.stories.tsx (2 tests) 693ms
+   ✓ With Trailing Icon  533ms
+ ✓ |storybook (chromium)| src/components/Pagination/Pagination.stories.tsx (2 tests) 711ms
+   ✓ First Page  528ms
+ ✓ |storybook (chromium)| src/components/TreeSelect/TreeSelect.stories.tsx (2 tests) 713ms
+   ✓ Flat Options  531ms
+
+ Test Files  8 passed (8)
+      Tests  16 passed (16)
+   Start at  18:01:42
+   Duration  3.94s (transform 0ms, setup 10.47s, import 2.13s, tests 6.01s, environment 0ms)
