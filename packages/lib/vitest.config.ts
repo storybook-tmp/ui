@@ -61,8 +61,22 @@ export default defineConfig({
             configDir: path.join(dirname, ".storybook"),
           }),
         ],
+        resolve: {
+          alias: {
+            buffer: "buffer/",
+            "@emotion/server/create-instance": path.join(
+              dirname,
+              "config/vitest/emotion-server-stub.ts",
+            ),
+            "@emotion/server": path.join(
+              dirname,
+              "config/vitest/emotion-server-stub.ts",
+            ),
+          },
+        },
         test: {
           name: "storybook",
+          setupFiles: [path.join(dirname, "config/vitest/buffer-polyfill.ts")],
           browser: {
             enabled: true,
             headless: true,
