@@ -36,6 +36,17 @@ export default defineConfig({
   ],
   resolve: {
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
+    alias: {
+      // @emotion/server requires Node's Buffer via html-tokenize; stub it in browser tests
+      "@emotion/server/create-instance": path.join(
+        dirname,
+        "config/vitest/emotion-server-stub.mjs",
+      ),
+      "@emotion/server": path.join(
+        dirname,
+        "config/vitest/emotion-server-stub.mjs",
+      ),
+    },
   },
   test: {
     reporters: ["default", ...(process.env.CI === "true" ? ["junit"] : [])],
