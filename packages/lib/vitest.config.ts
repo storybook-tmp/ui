@@ -61,6 +61,16 @@ export default defineConfig({
             configDir: path.join(dirname, ".storybook"),
           }),
         ],
+        resolve: {
+          alias: {
+            // @emotion/server pulls in buffer-from which requires Node's Buffer.
+            // Stub it out in the browser environment.
+            "@emotion/server/create-instance": path.join(
+              dirname,
+              "config/vitest/emotion-server-stub.ts",
+            ),
+          },
+        },
         test: {
           name: "storybook",
           browser: {
