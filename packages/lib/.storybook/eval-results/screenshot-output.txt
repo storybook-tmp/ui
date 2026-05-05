@@ -1,0 +1,69 @@
+RUN  v4.1.2 /Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-02T16-32-00Z-7cbf3fe0/project/packages/lib
+
+11:42:18 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+ ✓ |storybook (chromium)| src/components/PageSizeSelector/PageSizeSelector.stories.ts (2 tests) 951ms
+   ✓ Default  737ms
+ ✓ |storybook (chromium)| src/components/Badge/TaskStatusBadge/TaskStatusBadge.stories.ts (3 tests) 1328ms
+   ✓ Succeeded  809ms
+ ✓ |storybook (chromium)| src/components/ErrorBoundary/ErrorBoundary.stories.tsx (3 tests) 1212ms
+   ✓ With Working Child  621ms
+   ✓ With Broken Child  321ms
+ ✓ |storybook (chromium)| src/components/Badge/TestStatusBadge/TestStatusBadge.stories.ts (3 tests) 1401ms
+   ✓ Pass  809ms
+   ✓ Fail  321ms
+ ✓ |storybook (chromium)| src/components/IconWithTooltip/IconWithTooltip.stories.ts (3 tests) 1252ms
+   ✓ Info Icon  636ms
+   ✓ Warning Icon  322ms
+ ✓ |storybook (chromium)| src/components/ExpiringAnnouncementTooltip/ExpiringAnnouncementTooltip.stories.ts (3 tests) 1304ms
+   ✓ Default  736ms
+ ✓ |storybook (chromium)| src/components/Popconfirm/Popconfirm.stories.ts (4 tests) 1458ms
+   ✓ Default  722ms
+   ✓ Custom Text  322ms
+ ✓ |storybook (chromium)| src/components/TreeSelect/TreeSelect.stories.ts (3 tests) 1353ms
+   ✓ Default  918ms
+ ✓ |storybook (chromium)| src/components/Accordion/Accordion.stories.ts (6 tests) 1726ms
+   ✓ Default  824ms
+ ✓ |storybook (chromium)| src/components/Pagination/Pagination.stories.ts (3 tests) 368ms
+
+ Test Files  10 passed (10)
+      Tests  33 passed (33)
+   Start at  23:42:18
+   Duration  6.77s (transform 0ms, setup 16.73s, import 3.42s, tests 12.35s, environment 0ms)
+
+
+stderr | src/components/ErrorBoundary/ErrorBoundary.stories.tsx > With Broken Child
+[Error: Uncaught Error: This component has crashed]
+stderr | src/components/ErrorBoundary/ErrorBoundary.stories.tsx > With Broken Child
+[Error: Uncaught Error: This component has crashed]
+stderr | src/components/ErrorBoundary/ErrorBoundary.stories.tsx > With Broken Child
+The above error occurred in the <BrokenComponent> component:
+
+    at BrokenComponent (http://localhost:63315/Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-02T16-32-00Z-7cbf3fe0/project/packages/lib/src/components/ErrorBoundary/ErrorBoundary.stories.tsx?import&browserv=1775148143408:18:9)
+    at DefaultErrorBoundary (http://localhost:63315/src/components/ErrorBoundary/DefaultErrorBoundary.tsx:6:5)
+    at ErrorBoundary (http://localhost:63315/src/components/ErrorBoundary/index.tsx:5:26)
+    at hookified (http://localhost:63315/node_modules/.cache/storybook/0.0.0-pr-34421-sha-0f73e3a9/62b635dcc6dc3c4d4ce8e39fa42c91b6091f675fcc4e97dda701b672bfffcdf2/sb-vitest/deps/chunk-ROVYD6LQ.js?v=a06aa690:3480:11)
+    at Router (http://localhost:63315/node_modules/.cache/storybook/0.0.0-pr-34421-sha-0f73e3a9/62b635dcc6dc3c4d4ce8e39fa42c91b6091f675fcc4e97dda701b672bfffcdf2/sb-vitest/deps/react-router-dom.js?v=cf6516e4:3781:15)
+    at MemoryRouter (http://localhost:63315/node_modules/.cache/storybook/0.0.0-pr-34421-sha-0f73e3a9/62b635dcc6dc3c4d4ce8e39fa42c91b6091f675fcc4e97dda701b672bfffcdf2/sb-vitest/deps/react-router-dom.js?v=cf6516e4:3709:5)
+    at ToastProviderCore (http://localhost:63315/src/context/toast/index.tsx:27:30)
+    at yt (http://localhost:63315/node_modules/.cache/storybook/0.0.0-pr-34421-sha-0f73e3a9/62b635dcc6dc3c4d4ce8e39fa42c91b6091f675fcc4e97dda701b672bfffcdf2/sb-vitest/deps/@leafygreen-ui_toast.js?v=30de5110:905:15)
+    at ToastProvider (http://localhost:63315/src/context/toast/index.tsx:117:26)
+    at unboundStoryFn (http://localhost:63315/node_modules/.cache/storybook/0.0.0-pr-34421-sha-0f73e3a9/62b635dcc6dc3c4d4ce8e39fa42c91b6091f675fcc4e97dda701b672bfffcdf2/sb-vitest/deps/chunk-ROVYD6LQ.js?v=a06aa690:4090:245)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, DefaultErrorBoundary.
+stderr | src/components/ErrorBoundary/ErrorBoundary.stories.tsx > With Broken Child
+{
+  "error": [Error: This component has crashed],
+  "errorInfo": {
+    "componentStack": "
+    at BrokenComponent (http://localhost:63315/Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-02T16-32-00Z-7cbf3fe0/project/packages/lib/src/components/ErrorBoundary/ErrorBoundary.stories.tsx?import&browserv=1775148143408:18:9)
+    at DefaultErrorBoundary (http://localhost:63315/src/components/ErrorBoundary/DefaultErrorBoundary.tsx:6:5)
+    at ErrorBoundary (http://localhost:63315/src/components/ErrorBoundary/index.tsx:5:26)
+    at hookified (http://localhost:63315/node_modules/.cache/storybook/0.0.0-pr-34421-sha-0f73e3a9/62b635dcc6dc3c4d4ce8e39fa42c91b6091f675fcc4e97dda701b672bfffcdf2/sb-vitest/deps/chunk-ROVYD6LQ.js?v=a06aa690:3480:11)
+    at Router (http://localhost:63315/node_modules/.cache/storybook/0.0.0-pr-34421-sha-0f73e3a9/62b635dcc6dc3c4d4ce8e39fa42c91b6091f675fcc4e97dda701b672bfffcdf2/sb-vitest/deps/react-router-dom.js?v=cf6516e4:3781:15)
+    at MemoryRouter (http://localhost:63315/node_modules/.cache/storybook/0.0.0-pr-34421-sha-0f73e3a9/62b635dcc6dc3c4d4ce8e39fa42c91b6091f675fcc4e97dda701b672bfffcdf2/sb-vitest/deps/react-router-dom.js?v=cf6516e4:3709:5)
+    at ToastProviderCore (http://localhost:63315/src/context/toast/index.tsx:27:30)
+    at yt (http://localhost:63315/node_modules/.cache/storybook/0.0.0-pr-34421-sha-0f73e3a9/62b635dcc6dc3c4d4ce8e39fa42c91b6091f675fcc4e97dda701b672bfffcdf2/sb-vitest/deps/@leafygreen-ui_toast.js?v=30de5110:905:15)
+    at ToastProvider (http://localhost:63315/src/context/toast/index.tsx:117:26)
+    at unboundStoryFn (http://localhost:63315/node_modules/.cache/storybook/0.0.0-pr-34421-sha-0f73e3a9/62b635dcc6dc3c4d4ce8e39fa42c91b6091f675fcc4e97dda701b672bfffcdf2/sb-vitest/deps/chunk-ROVYD6LQ.js?v=a06aa690:4090:245)",
+  },
+}
