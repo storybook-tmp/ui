@@ -1,0 +1,3 @@
+6:01:31 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+Port 63315 is in use, trying another one...
+JSON report written to /Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-03T10-49-51Z-f02430d2/project/packages/lib/.storybook/eval-results/story-render-report.json
