@@ -1,0 +1,195 @@
+
+┌  Building storybook v0.0.0-pr-34421-sha-8babe7bc
+│
+◇  Cleaning outputDir: storybook-static
+│
+◇  Loading presets
+│
+◇  Building manager..
+│
+▲  unable to find package.json for @leafygreen-ui/icon
+│
+●  Building preview..
+│  Vite vite v7.3.1 building client environment for production...
+│  Vite transforming...
+│
+▲  Vite [plugin vite:resolve] Module "stream" has been externalized for
+│  browser compatibility, imported by
+│  "/Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-11T00-56-46Z-92fe5806/project/node_modules/.pnpm/through@2.3.8/node_modules/through/index.js".
+│  See
+│  ]8;;https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibilityhttps://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility]8;;
+│  for more details.
+│
+▲  Vite [plugin vite:resolve] Module "stream" has been externalized for
+│  browser compatibility, imported by
+│  "/Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-11T00-56-46Z-92fe5806/project/node_modules/.pnpm/multipipe@1.0.2/node_modules/multipipe/index.js".
+│  See
+│  ]8;;https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibilityhttps://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility]8;;
+│  for more details.
+│
+▲  Vite [plugin vite:resolve] Module "stream" has been externalized for
+│  browser compatibility, imported by
+│  "/Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-11T00-56-46Z-92fe5806/project/node_modules/.pnpm/readable-stream@1.0.34/node_modules/readable-stream/readable.js".
+│  See
+│  ]8;;https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibilityhttps://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility]8;;
+│  for more details.
+│
+▲  Vite [plugin vite:resolve] Module "stream" has been externalized for
+│  browser compatibility, imported by
+│  "/Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-11T00-56-46Z-92fe5806/project/node_modules/.pnpm/readable-stream@1.0.34/node_modules/readable-stream/lib/_stream_writable.js".
+│  See
+│  ]8;;https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibilityhttps://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility]8;;
+│  for more details.
+│
+▲  Vite [plugin vite:resolve] Module "events" has been externalized for
+│  browser compatibility, imported by
+│  "/Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-11T00-56-46Z-92fe5806/project/node_modules/.pnpm/readable-stream@1.0.34/node_modules/readable-stream/lib/_stream_readable.js".
+│  See
+│  ]8;;https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibilityhttps://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility]8;;
+│  for more details.
+│
+▲  Vite [plugin vite:resolve] Module "stream" has been externalized for
+│  browser compatibility, imported by
+│  "/Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-11T00-56-46Z-92fe5806/project/node_modules/.pnpm/readable-stream@1.0.34/node_modules/readable-stream/lib/_stream_readable.js".
+│  See
+│  ]8;;https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibilityhttps://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility]8;;
+│  for more details.
+│
+▲  Vite [plugin vite:resolve] Module "events" has been externalized for
+│  browser compatibility, imported by
+│  "/Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-11T00-56-46Z-92fe5806/project/node_modules/.pnpm/readable-stream@2.3.8/node_modules/readable-stream/lib/_stream_readable.js".
+│  See
+│  ]8;;https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibilityhttps://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility]8;;
+│  for more details.
+│
+▲  Vite [plugin vite:resolve] Module "events" has been externalized for
+│  browser compatibility, imported by
+│  "/Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-11T00-56-46Z-92fe5806/project/node_modules/.pnpm/readable-stream@2.3.8/node_modules/readable-stream/lib/internal/streams/stream-browser.js".
+│  See
+│  ]8;;https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibilityhttps://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility]8;;
+│  for more details.
+│  Vite ✓ 844 modules transformed.
+│  Vite rendering chunks...
+│  Vite computing gzip size...
+│  Vite storybook-static/assets/context-C0qIqeS4.png
+│  6.12 kB
+│  Vite storybook-static/assets/styling-Bk6zjRzU.png
+│  7.24 kB
+│  Vite storybook-static/iframe.html
+│  18.77 kB │ gzip:   5.27 kB
+│  Vite storybook-static/assets/docs---vsFbMi.png
+│  27.88 kB
+│  Vite storybook-static/assets/share-DGA-UcQf.png
+│  40.77 kB
+│  Vite storybook-static/assets/accessibility-W_h2acOZ.png
+│  42.34 kB
+│  Vite storybook-static/assets/figma-plugin-CH2hELiO.png
+│  44.25 kB
+│  Vite storybook-static/assets/theming-D6WJLNoW.png
+│  44.37 kB
+│  Vite storybook-static/assets/testing-cbzR9l9r.png
+│  49.31 kB
+│  Vite storybook-static/assets/errorPage-CGD7Qw_T.svg
+│  51.76 kB │ gzip:  14.66 kB
+│  Vite storybook-static/assets/addon-library-BWUCAmyN.png
+│  467.37 kB
+│  Vite storybook-static/assets/Header-Ck-SSN7O.css
+│  0.51 kB │ gzip:   0.30 kB
+│  Vite storybook-static/assets/Button-B2efaGtC.css
+│  0.52 kB │ gzip:   0.29 kB
+│  Vite storybook-static/assets/Page-CeeQJVdd.css
+│  0.91 kB │ gzip:   0.39 kB
+│  Vite storybook-static/assets/pagination-BHNifIfC.js
+│  0.14 kB │ gzip:   0.14 kB
+│  Vite storybook-static/assets/tokens-DlSGmJL3.js
+│  0.17 kB │ gzip:   0.14 kB
+│  Vite storybook-static/assets/formatter-EIJCOSYU-Bi4uYG7c.js
+│  0.24 kB │ gzip:   0.20 kB
+│  Vite storybook-static/assets/index-BaMRgrmf.js
+│  0.39 kB │ gzip:   0.26 kB
+│  Vite storybook-static/assets/Header.stories-WIuvK6WF.js
+│  0.76 kB │ gzip:   0.43 kB
+│  Vite storybook-static/assets/react-18-CWiMIF16.js
+│  0.90 kB │ gzip:   0.52 kB
+│  Vite storybook-static/assets/Button-DUfLimnu.js
+│  1.22 kB │ gzip:   0.59 kB
+│  Vite storybook-static/assets/DocsRenderer-LL677BLK-CJbnwI5U.js
+│  1.23 kB │ gzip:   0.69 kB
+│  Vite storybook-static/assets/preload-helper-PPVm8Dsz.js
+│  1.23 kB │ gzip:   0.71 kB
+│  Vite storybook-static/assets/Button.stories-NJXQvtlL.js
+│  1.26 kB │ gzip:   0.51 kB
+│  Vite storybook-static/assets/FullPageLoad.stories-BVIPMJEO.js
+│  1.62 kB │ gzip:   0.73 kB
+│  Vite storybook-static/assets/Header-1L_unbiK.js
+│  1.71 kB │ gzip:   0.77 kB
+│  Vite storybook-static/assets/summary-C0XWPO94.js
+│  2.52 kB │ gzip:   0.70 kB
+│  Vite storybook-static/assets/ErrorFallback.stories-BVitKOrl.js
+│  2.78 kB │ gzip:   1.16 kB
+│  Vite storybook-static/assets/Page.stories-CrAd_4a3.js
+│  3.39 kB │ gzip:   1.52 kB
+│  Vite storybook-static/assets/TestStatusBadge.stories-CCJaBp6B.js
+│  3.47 kB │ gzip:   0.98 kB
+│  Vite storybook-static/assets/index-D-lnP_x4.js
+│  4.07 kB │ gzip:   1.44 kB
+│  Vite storybook-static/assets/Icon.stories-DP0LUkEZ.js
+│  5.69 kB │ gzip:   1.21 kB
+│  Vite storybook-static/assets/Accordion.stories-BrR3i5i7.js
+│  7.99 kB │ gzip:   2.14 kB
+│  Vite storybook-static/assets/TaskStatusBadge.stories-D0p8LzJR.js
+│  8.31 kB │ gzip:   2.18 kB
+│  Vite storybook-static/assets/TextInputWithGlyph.stories-DHUVnIy4.js
+│  11.52 kB │ gzip:   3.99 kB
+│  Vite storybook-static/assets/index-ni6bkDi9.js
+│  12.38 kB │ gzip:   4.23 kB
+│  Vite storybook-static/assets/transcript-jWTXbWll.js
+│  13.63 kB │ gzip:   4.72 kB
+│  Vite storybook-static/assets/Pagination.stories-MmWM912p.js
+│  14.42 kB │ gzip:   4.71 kB
+│  Vite storybook-static/assets/Popconfirm.stories-jO-D6BMa.js
+│  17.69 kB │ gzip:   6.23 kB
+│  Vite storybook-static/assets/index-DJXgr9-5.js
+│  20.01 kB │ gzip:   5.33 kB
+│  Vite storybook-static/assets/Configure-DQJ6jO7g.js
+│  26.14 kB │ gzip:  11.03 kB
+│  Vite storybook-static/vite-inject-mocker-entry.js
+│  28.11 kB │ gzip:   9.82 kB
+│  Vite storybook-static/assets/matchers-5TDFFDYO-N4FjKbka.js
+│  29.23 kB │ gzip:  10.05 kB
+│  Vite storybook-static/assets/Color-23OOGO2C-CP7wAKrD.js
+│  30.07 kB │ gzip:  11.41 kB
+│  Vite storybook-static/assets/index-Btapye1l.js
+│  31.60 kB │ gzip:   9.65 kB
+│  Vite storybook-static/assets/WithTooltip-65CFNBJE-DDc4kDm8.js
+│  33.06 kB │ gzip:  11.63 kB
+│  Vite storybook-static/assets/index-D1oqC6IP.js
+│  35.32 kB │ gzip:  13.16 kB
+│  Vite storybook-static/assets/PageSizeSelector.stories-CVyHoa_9.js
+│  39.24 kB │ gzip:  12.61 kB
+│  Vite storybook-static/assets/syntaxhighlighter-OH4MV7E3-9zgsAODf.js
+│  78.14 kB │ gzip:  27.39 kB
+│  Vite storybook-static/assets/data-ypphFJp7.js
+│  372.65 kB │ gzip:  50.69 kB
+│  Vite storybook-static/assets/axe-DIiPQeYb.js
+│  571.16 kB │ gzip: 157.45 kB
+│  Vite storybook-static/assets/blocks-BawsoeR5.js
+│  818.02 kB │ gzip: 261.81 kB
+│  Vite storybook-static/assets/iframe-Bna18Fx7.js
+│  2,033.94 kB │ gzip: 569.64 kB
+│
+▲  Vite
+│  (!) Some chunks are larger than 500 kB after minification. Consider:
+│  - Using dynamic import() to code-split the application
+│  - Use build.rollupOptions.output.manualChunks to improve chunking:
+│  ]8;;https://rollupjs.org/configuration-options/#output-manualchunkshttps://rollupjs.org/configuration-options/#output-manualchunks]8;;
+│  - Adjust chunk size limit for this warning via
+│  build.chunkSizeWarningLimit.
+│  Vite ✓ built in 6.09s
+│
+◇  Output directory:
+│  /Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-11T00-56-46Z-92fe5806/project/packages/lib/storybook-static
+│
+└  Storybook build completed successfully
+
+

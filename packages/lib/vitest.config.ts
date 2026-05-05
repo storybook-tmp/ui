@@ -36,6 +36,9 @@ export default defineConfig({
   ],
   resolve: {
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
+    alias: {
+      events: "events",
+    },
   },
   test: {
     reporters: ["default", ...(process.env.CI === "true" ? ["junit"] : [])],
@@ -73,6 +76,7 @@ export default defineConfig({
               },
             ],
           },
+          setupFiles: ["./config/vitest/browser-setup.ts"],
         },
       },
     ],
