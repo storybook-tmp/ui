@@ -1,6 +1,35 @@
 import type { Preview } from '@storybook/react-vite';
+import { initialize, mswLoader } from 'msw-storybook-addon';
+import { MemoryRouter } from 'react-router-dom';
+import { Global } from '@emotion/react';
+import { AuthProvider } from '../src/context/AuthProvider';
+import { ToastProvider } from '../src/context/toast';
+import { resetStyles, bodyStyles } from '../src/components/styles/globalStyles';
+import { mswHandlers } from './msw-handlers';
+
+initialize({
+  onUnhandledRequest: 'bypass',
+});
 
 const preview: Preview = {
+  decorators: [
+    (Story) => (
+      <MemoryRouter>
+        <AuthProvider
+          evergreenAppURL="http://localhost:9090"
+          remoteAuthURL="http://localhost:9090/auth"
+          localAuthRoute="/login"
+          shouldUseLocalAuth={true}
+        >
+          <ToastProvider>
+            <Global styles={[resetStyles, bodyStyles]} />
+            <Story />
+          </ToastProvider>
+        </AuthProvider>
+      </MemoryRouter>
+    ),
+  ],
+  loaders: [mswLoader],
   parameters: {
     controls: {
       matchers: {
@@ -10,6 +39,9 @@ const preview: Preview = {
     },
     a11y: {
       test: 'todo',
+    },
+    msw: {
+      handlers: mswHandlers,
     },
   },
 };

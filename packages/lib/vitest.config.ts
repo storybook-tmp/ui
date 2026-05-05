@@ -34,8 +34,22 @@ export default defineConfig({
       },
     }),
   ],
+  define: {
+    "process.env": JSON.stringify({
+      REACT_APP_RELEASE_STAGE: "local",
+      NODE_ENV: "test",
+    }),
+  },
   resolve: {
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
+    alias: {
+      // @leafygreen-ui/emotion imports @emotion/server which needs Node's Buffer.
+      // Stub it out for browser-based Storybook tests.
+      "@emotion/server/create-instance": path.join(
+        dirname,
+        ".storybook/emotion-server-stub.ts",
+      ),
+    },
   },
   test: {
     reporters: ["default", ...(process.env.CI === "true" ? ["junit"] : [])],
