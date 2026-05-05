@@ -1,4 +1,11 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const dirname =
+  typeof __dirname !== 'undefined'
+    ? __dirname
+    : path.dirname(fileURLToPath(import.meta.url));
 
 const config: StorybookConfig = {
   stories: [
@@ -14,6 +21,17 @@ const config: StorybookConfig = {
     '@storybook/addon-onboarding',
   ],
   framework: '@storybook/react-vite',
+  staticDirs: ['../public'],
+  viteFinal(config) {
+    config.resolve = {
+      ...config.resolve,
+      alias: {
+        ...(config.resolve?.alias ?? {}),
+        '@emotion/server/create-instance': path.resolve(dirname, 'emotion-server-shim.ts'),
+      },
+    };
+    return config;
+  },
 };
 
 export default config;
