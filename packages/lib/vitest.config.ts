@@ -36,6 +36,10 @@ export default defineConfig({
   ],
   resolve: {
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
+    alias: {
+      // Prevent @emotion/server from pulling in Node.js Buffer via html-tokenize
+      "@emotion/server": "@emotion/css",
+    },
   },
   test: {
     reporters: ["default", ...(process.env.CI === "true" ? ["junit"] : [])],
