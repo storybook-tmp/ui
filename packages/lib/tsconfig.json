@@ -6,6 +6,7 @@
     "test_utils/custom-queries.ts",
     "./config/vitest/setupTests.ts",
     ".storybook/preview.tsx",
+    ".storybook/msw-handlers.ts",
     "src/**/*.d.ts",
     "vitest.d.ts"
   ],
