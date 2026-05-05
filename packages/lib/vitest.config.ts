@@ -34,8 +34,19 @@ export default defineConfig({
       },
     }),
   ],
+  define: {
+    "process.env": JSON.stringify({}),
+  },
   resolve: {
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
+    alias: {
+      // @leafygreen-ui/emotion imports @emotion/server/create-instance, which depends on
+      // Buffer (Node API) via html-tokenize. Stub it for browser-based Storybook tests.
+      "@emotion/server/create-instance": path.join(
+        dirname,
+        ".storybook/emotion-server-stub.ts",
+      ),
+    },
   },
   test: {
     reporters: ["default", ...(process.env.CI === "true" ? ["junit"] : [])],
