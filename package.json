@@ -21,16 +21,16 @@
     "@storybook/addon-a11y": "10.4.0-alpha.17",
     "@storybook/addon-onboarding": "10.4.0-alpha.17",
     "@storybook/addon-vitest": "10.4.0-alpha.17",
-    "@storybook/react-vite": "10.4.0-alpha.17",
+    "@storybook/react-vite": "10.4.0-alpha.10",
     "@vitest/browser": "4.1.2",
     "@vitest/browser-playwright": "4.1.2",
     "@vitest/coverage-v8": "4.1.2",
     "husky": "9.1.7",
     "lint-staged": "16.4.0",
     "playwright": "^1.58.2",
-    "storybook": "10.4.0-alpha.17",
+    "storybook": "10.4.0-alpha.10",
     "vitest": "^4.1.2",
-    "@storybook/addon-docs": "10.4.0-alpha.17",
+    "@storybook/addon-docs": "10.4.0-alpha.10",
     "eslint-plugin-storybook": "10.4.0-alpha.17"
   }
 }
