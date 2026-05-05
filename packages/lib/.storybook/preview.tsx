@@ -1,6 +1,44 @@
 import type { Preview } from '@storybook/react-vite';
+import { Global } from '@emotion/react';
+import LeafyGreenProvider from '@leafygreen-ui/leafygreen-provider';
+import { initialize, mswLoader } from 'msw-storybook-addon';
+import { createMemoryRouter, RouterProvider } from 'react-router-dom';
+import { resetStyles, bodyStyles } from '../src/components/styles/globalStyles';
+import { mswHandlers } from './msw-handlers';
+
+initialize({ onUnhandledRequest: 'bypass' });
 
 const preview: Preview = {
+  decorators: [
+    (Story) => (
+      <>
+        <Global styles={[resetStyles, bodyStyles]} />
+        <Story />
+      </>
+    ),
+    (Story) => (
+      <LeafyGreenProvider>
+        <Story />
+      </LeafyGreenProvider>
+    ),
+    (Story, context) => {
+      const { reactRouter } = context.parameters;
+      const { params, path, route } = reactRouter || {};
+      const routes = [
+        {
+          path: path || '/',
+          parameters: params || {},
+          element: <Story />,
+          errorElement: <div>Failed to render component.</div>,
+        },
+      ];
+      const memoryRouter = createMemoryRouter(routes, {
+        initialEntries: [route || '/'],
+      });
+      return <RouterProvider router={memoryRouter} />;
+    },
+  ],
+  loaders: [mswLoader],
   parameters: {
     controls: {
       matchers: {
@@ -11,6 +49,7 @@ const preview: Preview = {
     a11y: {
       test: 'todo',
     },
+    msw: { handlers: mswHandlers },
   },
 };
 
