@@ -1,0 +1,45 @@
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect } from "storybook/test";
+import PageSizeSelector from ".";
+
+const meta = {
+  component: PageSizeSelector,
+  tags: ["ai-generated"],
+} satisfies Meta<typeof PageSizeSelector>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    value: 10,
+    onChange: () => {},
+  },
+  play: async ({ canvas }) => {
+    await expect(canvas.getByRole("button", { name: /10/i })).toBeVisible();
+  },
+};
+
+export const LargePageSize: Story = {
+  args: {
+    value: 100,
+    onChange: () => {},
+  },
+  play: async ({ canvas }) => {
+    await expect(canvas.getByRole("button", { name: /100/i })).toBeVisible();
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    value: 20,
+    onChange: () => {},
+    disabled: true,
+  },
+  play: async ({ canvas }) => {
+    await expect(canvas.getByRole("button", { name: /20/i })).toHaveAttribute(
+      "aria-disabled",
+      "true",
+    );
+  },
+};
