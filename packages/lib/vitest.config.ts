@@ -60,6 +60,28 @@ export default defineConfig({
           storybookTest({
             configDir: path.join(dirname, ".storybook"),
           }),
+          {
+            name: "storybook-browser-compat",
+            config() {
+              return {
+                resolve: {
+                  alias: {
+                    "@emotion/server/create-instance": path.join(
+                      dirname,
+                      ".storybook/emotion-server-stub.ts",
+                    ),
+                    "@emotion/server": path.join(
+                      dirname,
+                      ".storybook/emotion-server-stub.ts",
+                    ),
+                  },
+                },
+                define: {
+                  "process.env": JSON.stringify({}),
+                },
+              };
+            },
+          },
         ],
         test: {
           name: "storybook",
