@@ -35,6 +35,14 @@ export default defineConfig({
     }),
   ],
   resolve: {
+    alias: {
+      // @emotion/server pulls in buffer-from which expects Node's Buffer.
+      // Stories never need SSR, so stub it out for the browser test runner.
+      "@emotion/server/create-instance": path.join(
+        dirname,
+        "config/vitest/emotion-server-stub.ts",
+      ),
+    },
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
   },
   test: {
