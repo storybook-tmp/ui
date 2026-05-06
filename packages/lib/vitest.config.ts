@@ -36,6 +36,14 @@ export default defineConfig({
   ],
   resolve: {
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
+    alias: {
+      // @leafygreen-ui/emotion imports @emotion/server which requires Node's Buffer.
+      // Stub it out in the browser with a no-op module.
+      "@emotion/server/create-instance": path.join(
+        dirname,
+        ".storybook/emotion-server-stub.ts",
+      ),
+    },
   },
   test: {
     reporters: ["default", ...(process.env.CI === "true" ? ["junit"] : [])],
@@ -61,6 +69,18 @@ export default defineConfig({
             configDir: path.join(dirname, ".storybook"),
           }),
         ],
+        define: {
+          "process.env.REACT_APP_RELEASE_STAGE": JSON.stringify("local"),
+          "process.env.REACT_APP_EVERGREEN_URL": JSON.stringify(""),
+          "process.env.NODE_ENV": JSON.stringify("development"),
+          "process.env.REACT_APP_SPRUCE_SENTRY_DSN": JSON.stringify(""),
+          "process.env.REACT_APP_SPRUCE_URL": JSON.stringify(""),
+          "process.env.REACT_APP_SIGNAL_PROCESSING_URL": JSON.stringify(""),
+          "process.env.REACT_APP_PARSLEY_URL": JSON.stringify(""),
+          "process.env.REACT_APP_VERSION": JSON.stringify(""),
+          "process.env.REACT_APP_HONEYCOMB_BASE_URL": JSON.stringify(""),
+          "process.env.REACT_APP_USER_KEY": JSON.stringify(""),
+        },
         test: {
           name: "storybook",
           browser: {
