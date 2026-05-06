@@ -10,6 +10,8 @@ const dirname =
   typeof __dirname !== "undefined"
     ? __dirname
     : path.dirname(fileURLToPath(import.meta.url));
+
+const emotionServerStub = path.join(dirname, ".storybook/emotion-server-stub.js");
 const playwrightProviderOptions =
   process.env.STORYBOOK_TEST_SCREENSHOTS === "true"
     ? {
@@ -61,6 +63,12 @@ export default defineConfig({
             configDir: path.join(dirname, ".storybook"),
           }),
         ],
+        resolve: {
+          alias: {
+            "@emotion/server/create-instance": emotionServerStub,
+            "@emotion/server": emotionServerStub,
+          },
+        },
         test: {
           name: "storybook",
           browser: {
