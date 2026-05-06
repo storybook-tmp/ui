@@ -54,6 +54,25 @@ export default defineConfig({
       },
       {
         extends: true,
+        define: {
+          "process.env": JSON.stringify({
+            NODE_ENV: "development",
+            REACT_APP_RELEASE_STAGE: "local",
+            REACT_APP_EVERGREEN_URL: "http://localhost:9090",
+          }),
+        },
+        resolve: {
+          alias: {
+            "@emotion/server/create-instance": path.join(
+              dirname,
+              ".storybook/emotion-server-stub.js",
+            ),
+            "@emotion/server": path.join(
+              dirname,
+              ".storybook/emotion-server-stub.js",
+            ),
+          },
+        },
         plugins: [
           // The plugin will run tests for the stories defined in your Storybook config
           // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
