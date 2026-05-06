@@ -14,6 +14,15 @@ const config: StorybookConfig = {
     '@storybook/addon-onboarding',
   ],
   framework: '@storybook/react-vite',
+  staticDirs: ['../public'],
+  viteFinal: (config) => {
+    config.resolve = config.resolve ?? {};
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@emotion/server': '@emotion/css',
+    };
+    return config;
+  },
 };
 
 export default config;
