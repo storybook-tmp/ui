@@ -61,6 +61,21 @@ export default defineConfig({
             configDir: path.join(dirname, ".storybook"),
           }),
         ],
+        resolve: {
+          alias: {
+            "@emotion/server/create-instance": path.join(
+              dirname,
+              ".storybook/emotion-server-stub.ts",
+            ),
+          },
+        },
+        define: {
+          "process.env": JSON.stringify({
+            NODE_ENV: "test",
+            REACT_APP_RELEASE_STAGE: "local",
+            REACT_APP_EVERGREEN_URL: "http://localhost:9090",
+          }),
+        },
         test: {
           name: "storybook",
           browser: {
