@@ -1,11 +1,20 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
+  viteFinal: (viteConfig) => {
+    viteConfig.resolve = viteConfig.resolve ?? {};
+    viteConfig.resolve.alias = {
+      ...viteConfig.resolve.alias,
+      '@emotion/server': '@emotion/css',
+    };
+    return viteConfig;
+  },
   stories: [
     '../src/**/*.mdx',
     '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
     './eval-support/*.mdx',
   ],
+  staticDirs: ['../public'],
   addons: [
     '@chromatic-com/storybook',
     '@storybook/addon-vitest',
