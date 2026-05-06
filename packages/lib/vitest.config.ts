@@ -61,6 +61,18 @@ export default defineConfig({
             configDir: path.join(dirname, ".storybook"),
           }),
         ],
+        resolve: {
+          alias: {
+            "@emotion/server/create-instance": path.join(
+              dirname,
+              ".storybook/emotion-server-shim.ts",
+            ),
+            "@emotion/server": path.join(
+              dirname,
+              ".storybook/emotion-server-shim.ts",
+            ),
+          },
+        },
         test: {
           name: "storybook",
           browser: {
