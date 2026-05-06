@@ -36,6 +36,16 @@ export default defineConfig({
   ],
   resolve: {
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
+    alias: {
+      "@emotion/server/create-instance": path.join(
+        dirname,
+        "config/vitest/emotion-server-stub.ts",
+      ),
+      "@emotion/server": path.join(
+        dirname,
+        "config/vitest/emotion-server-stub.ts",
+      ),
+    },
   },
   test: {
     reporters: ["default", ...(process.env.CI === "true" ? ["junit"] : [])],

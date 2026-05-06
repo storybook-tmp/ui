@@ -1,6 +1,11 @@
 import type { Preview } from '@storybook/react-vite';
+import { initialize, mswLoader } from 'msw-storybook-addon';
+import { mswHandlers } from './msw-handlers';
+
+initialize({ onUnhandledRequest: 'bypass' });
 
 const preview: Preview = {
+  loaders: [mswLoader],
   parameters: {
     controls: {
       matchers: {
@@ -11,6 +16,7 @@ const preview: Preview = {
     a11y: {
       test: 'todo',
     },
+    msw: { handlers: mswHandlers },
   },
 };
 
