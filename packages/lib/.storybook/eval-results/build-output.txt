@@ -1,0 +1,105 @@
+
+┌  Building storybook v10.4.0-alpha.17
+│
+◇  Cleaning outputDir: storybook-static
+│
+◇  Loading presets
+│
+◇  Building manager..
+│
+▲  unable to find package.json for @leafygreen-ui/icon
+│
+●  Building preview..
+│
+▲  No story files found for the specified pattern: src/**/*.mdx
+│
+●  Copying static files: public at storybook-static
+│  Vite vite v7.3.1 building client environment for production...
+│  Vite transforming...
+│  Vite ✓ 842 modules transformed.
+│  Vite rendering chunks...
+│  Vite computing gzip size...
+│  Vite storybook-static/iframe.html
+│  19.05 kB │ gzip:   5.29 kB
+│  Vite storybook-static/assets/pagination-BHNifIfC.js
+│  0.14 kB │ gzip:   0.14 kB
+│  Vite storybook-static/assets/tokens-C8SpV4b-.js
+│  0.15 kB │ gzip:   0.13 kB
+│  Vite storybook-static/assets/formatter-EIJCOSYU-BedfhZom.js
+│  0.29 kB │ gzip:   0.23 kB
+│  Vite storybook-static/assets/index-Dt3HfNCh.js
+│  0.46 kB │ gzip:   0.30 kB
+│  Vite storybook-static/assets/FullPageLoad.stories-BA0fKtZg.js
+│  0.82 kB │ gzip:   0.53 kB
+│  Vite storybook-static/assets/react-18-C-NPfqWm.js
+│  0.90 kB │ gzip:   0.52 kB
+│  Vite storybook-static/assets/preload-helper-PPVm8Dsz.js
+│  1.23 kB │ gzip:   0.71 kB
+│  Vite storybook-static/assets/IconWithTooltip.stories-DKQ_t-Y1.js
+│  1.45 kB │ gzip:   0.77 kB
+│  Vite storybook-static/assets/TestStatusBadge.stories-DbQ65fW5.js
+│  1.75 kB │ gzip:   0.77 kB
+│  Vite storybook-static/assets/TablePlaceholder.stories-C7NJ4nO4.js
+│  2.08 kB │ gzip:   0.99 kB
+│  Vite storybook-static/assets/summary-GuszWXrV.js
+│  2.42 kB │ gzip:   0.71 kB
+│  Vite storybook-static/assets/index-OLcL5Mf5.js
+│  4.07 kB │ gzip:   1.44 kB
+│  Vite storybook-static/assets/Popconfirm.stories-MEmCDkoU.js
+│  4.70 kB │ gzip:   1.59 kB
+│  Vite storybook-static/assets/TaskStatusBadge.stories-H6t9Bp0_.js
+│  4.77 kB │ gzip:   1.59 kB
+│  Vite storybook-static/assets/Accordion.stories-b3vnG87f.js
+│  5.14 kB │ gzip:   1.98 kB
+│  Vite storybook-static/assets/TextInputWithGlyph.stories-CbaCc8RL.js
+│  7.50 kB │ gzip:   3.32 kB
+│  Vite storybook-static/assets/index-B1IBAWmD.js
+│  9.50 kB │ gzip:   4.19 kB
+│  Vite storybook-static/assets/Pagination.stories-DHr8A6x0.js
+│  11.32 kB │ gzip:   4.23 kB
+│  Vite storybook-static/assets/index-F-8o0Dmz.js
+│  12.38 kB │ gzip:   4.23 kB
+│  Vite storybook-static/assets/transcript-u52nWh-2.js
+│  13.70 kB │ gzip:   4.75 kB
+│  Vite storybook-static/assets/index-b4WLQu02.js
+│  20.01 kB │ gzip:   5.33 kB
+│  Vite storybook-static/vite-inject-mocker-entry.js
+│  28.11 kB │ gzip:   9.82 kB
+│  Vite storybook-static/assets/matchers-5TDFFDYO-N4FjKbka.js
+│  29.23 kB │ gzip:  10.05 kB
+│  Vite storybook-static/assets/Color-23OOGO2C-Dx5NndLv.js
+│  30.12 kB │ gzip:  11.44 kB
+│  Vite storybook-static/assets/index-D_vO9naH.js
+│  31.60 kB │ gzip:   9.66 kB
+│  Vite storybook-static/assets/WithTooltip-65CFNBJE-CrV6NYZE.js
+│  33.10 kB │ gzip:  11.66 kB
+│  Vite storybook-static/assets/index-BTsfkTZC.js
+│  35.32 kB │ gzip:  13.15 kB
+│  Vite storybook-static/assets/PageSizeSelector.stories-P_qL-w7h.js
+│  36.46 kB │ gzip:  12.12 kB
+│  Vite storybook-static/assets/syntaxhighlighter-W7WJGI2T-CZSfGBIg.js
+│  78.56 kB │ gzip:  27.53 kB
+│  Vite storybook-static/assets/data-DdFg2qk6.js
+│  337.44 kB │ gzip:  62.21 kB
+│  Vite storybook-static/assets/axe-CZVyGI4J.js
+│  571.16 kB │ gzip: 157.45 kB
+│  Vite storybook-static/assets/DocsRenderer-LL677BLK-DpNCtBHD.js
+│  823.10 kB │ gzip: 263.61 kB
+│  Vite storybook-static/assets/iframe-B-i8JpqD.js
+│  2,200.20 kB │ gzip: 628.58 kB
+│
+▲  Vite
+│  (!) Some chunks are larger than 500 kB after minification. Consider:
+│  - Using dynamic import() to code-split the application
+│  - Use build.rollupOptions.output.manualChunks to improve chunking:
+│  ]8;;https://rollupjs.org/configuration-options/#output-manualchunkshttps://rollupjs.org/configuration-options/#output-manualchunks]8;;
+│  - Adjust chunk size limit for this warning via
+│  build.chunkSizeWarningLimit.
+│  Vite ✓ built in 4.74s
+│
+◇  Output directory:
+│  /home/steve/Development/storybook-eval/trials/2026-05-06T15-10-04Z-72908f5d/project/packages/lib/storybook-static
+│
+└  Storybook build completed successfully
+
+
