@@ -1,0 +1,68 @@
+import { useState } from 'react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { expect } from 'storybook/test';
+import { TreeSelect, TreeDataEntry } from './TreeSelect';
+
+const sampleData: TreeDataEntry[] = [
+  { title: 'All', value: 'all', key: 'all' },
+  {
+    title: 'Fruits',
+    value: 'fruits',
+    key: 'fruits',
+    children: [
+      { title: 'Apple', value: 'apple', key: 'apple' },
+      { title: 'Banana', value: 'banana', key: 'banana' },
+    ],
+  },
+  {
+    title: 'Vegetables',
+    value: 'vegetables',
+    key: 'vegetables',
+    children: [
+      { title: 'Carrot', value: 'carrot', key: 'carrot' },
+      { title: 'Broccoli', value: 'broccoli', key: 'broccoli' },
+    ],
+  },
+];
+
+const meta = {
+  component: TreeSelect,
+  tags: ['ai-generated'],
+  render: (args) => {
+    const [state, setState] = useState<string[]>(args.state ?? []);
+    return <TreeSelect {...args} state={state} onChange={setState} />;
+  },
+} satisfies Meta<typeof TreeSelect>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    tData: sampleData,
+    state: [],
+    onChange: () => {},
+  },
+  play: async ({ canvas, userEvent }) => {
+    const appleLabel = canvas.getByText('Apple');
+    await userEvent.click(appleLabel);
+    const appleCheckbox = canvas.getByLabelText('Apple');
+    await expect(appleCheckbox).toBeChecked();
+  },
+};
+
+export const WithPreselection: Story = {
+  args: {
+    tData: sampleData,
+    state: ['apple', 'banana', 'fruits'],
+    onChange: () => {},
+  },
+};
+
+export const AllSelected: Story = {
+  args: {
+    tData: sampleData,
+    state: ['all', 'fruits', 'apple', 'banana', 'vegetables', 'carrot', 'broccoli'],
+    onChange: () => {},
+  },
+};
