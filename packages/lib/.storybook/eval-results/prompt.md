@@ -1,0 +1,1 @@
+Run `node /Users/kasperpeulen/code/storybook/storybook/code/core/dist/bin/dispatcher.js ai setup` and follow its instructions precisely.
