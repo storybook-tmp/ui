@@ -5,11 +5,13 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { defineConfig } from "vitest/config";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { createRequire } from "node:module";
 
 const dirname =
   typeof __dirname !== "undefined"
     ? __dirname
     : path.dirname(fileURLToPath(import.meta.url));
+const require = createRequire(import.meta.url);
 const playwrightProviderOptions =
   process.env.STORYBOOK_TEST_SCREENSHOTS === "true"
     ? {
@@ -36,6 +38,12 @@ export default defineConfig({
   ],
   resolve: {
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
+    alias: {
+      events: require.resolve("events/"),
+      process: require.resolve("process/browser"),
+      stream: require.resolve("stream-browserify"),
+      util: require.resolve("util/"),
+    },
   },
   test: {
     reporters: ["default", ...(process.env.CI === "true" ? ["junit"] : [])],
@@ -63,6 +71,7 @@ export default defineConfig({
         ],
         test: {
           name: "storybook",
+          setupFiles: "./config/vitest/browser-setup.ts",
           browser: {
             enabled: true,
             headless: true,

@@ -1,0 +1,139 @@
+
+┌  Building storybook v10.4.0-alpha.17
+│
+◇  Cleaning outputDir: storybook-static
+│
+◇  Loading presets
+│
+◇  Building manager..
+│
+▲  unable to find package.json for @leafygreen-ui/icon
+│
+●  Building preview..
+│  Vite vite v7.3.1 building client environment for production...
+│  Vite transforming...
+│
+▲  Vite [plugin vite:resolve] Module "stream" has been externalized for
+│  browser compatibility, imported by
+│  "/Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-05-07T10-00-12Z-e429caf5/project/node_modules/.pnpm/through@2.3.8/node_modules/through/index.js".
+│  See
+│  https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility
+│  for more details.
+│
+▲  Vite [plugin vite:resolve] Module "stream" has been externalized for
+│  browser compatibility, imported by
+│  "/Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-05-07T10-00-12Z-e429caf5/project/node_modules/.pnpm/multipipe@1.0.2/node_modules/multipipe/index.js".
+│  See
+│  https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility
+│  for more details.
+│
+▲  Vite [plugin vite:resolve] Module "stream" has been externalized for
+│  browser compatibility, imported by
+│  "/Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-05-07T10-00-12Z-e429caf5/project/node_modules/.pnpm/readable-stream@1.0.34/node_modules/readable-stream/readable.js".
+│  See
+│  https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility
+│  for more details.
+│
+▲  Vite [plugin vite:resolve] Module "stream" has been externalized for
+│  browser compatibility, imported by
+│  "/Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-05-07T10-00-12Z-e429caf5/project/node_modules/.pnpm/readable-stream@1.0.34/node_modules/readable-stream/lib/_stream_readable.js".
+│  See
+│  https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility
+│  for more details.
+│
+▲  Vite [plugin vite:resolve] Module "stream" has been externalized for
+│  browser compatibility, imported by
+│  "/Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-05-07T10-00-12Z-e429caf5/project/node_modules/.pnpm/readable-stream@1.0.34/node_modules/readable-stream/lib/_stream_writable.js".
+│  See
+│  https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility
+│  for more details.
+│
+●  Copying static files: public at storybook-static
+│  Vite ✓ 2131 modules transformed.
+│  Vite rendering chunks...
+│  Vite computing gzip size...
+│  Vite storybook-static/iframe.html
+│  18.88 kB │ gzip:   5.28 kB
+│  Vite storybook-static/assets/tokens-BeFDtNVL.js
+│  0.16 kB │ gzip:   0.13 kB
+│  Vite storybook-static/assets/formatter-EIJCOSYU-B7y3kzy1.js
+│  0.29 kB │ gzip:   0.23 kB
+│  Vite storybook-static/assets/index-Ceuf3EyB.js
+│  0.46 kB │ gzip:   0.30 kB
+│  Vite storybook-static/assets/react-18-6CmaFM6j.js
+│  0.90 kB │ gzip:   0.52 kB
+│  Vite storybook-static/assets/preload-helper-PPVm8Dsz.js
+│  1.23 kB │ gzip:   0.71 kB
+│  Vite storybook-static/assets/TestStatusBadge.stories-CffQ93AC.js
+│  1.58 kB │ gzip:   0.75 kB
+│  Vite storybook-static/assets/summary-CF17tFLG.js
+│  2.42 kB │ gzip:   0.71 kB
+│  Vite storybook-static/assets/Popconfirm.stories-CZY6Cfr8.js
+│  3.26 kB │ gzip:   1.40 kB
+│  Vite storybook-static/assets/TaskStatusBadge.stories-D5Y_cGyY.js
+│  3.67 kB │ gzip:   1.43 kB
+│  Vite storybook-static/assets/index-B7XNrmhR.js
+│  4.07 kB │ gzip:   1.44 kB
+│  Vite storybook-static/assets/Accordion.stories-BIxA-wfy.js
+│  4.56 kB │ gzip:   1.80 kB
+│  Vite storybook-static/assets/index-CcA-jeo5.js
+│  6.50 kB │ gzip:   2.51 kB
+│  Vite storybook-static/assets/TextInputWithGlyph.stories-xdYHqTXt.js
+│  8.83 kB │ gzip:   3.57 kB
+│  Vite storybook-static/assets/index-B3b-4V8Y.js
+│  9.53 kB │ gzip:   4.21 kB
+│  Vite storybook-static/assets/Pagination.stories-QmfvjXH2.js
+│  11.28 kB │ gzip:   4.23 kB
+│  Vite storybook-static/assets/index-a1mg64CT.js
+│  12.38 kB │ gzip:   4.23 kB
+│  Vite storybook-static/assets/transcript-B8WKZnV2.js
+│  13.70 kB │ gzip:   4.75 kB
+│  Vite storybook-static/assets/index-BU-005fF.js
+│  20.01 kB │ gzip:   5.33 kB
+│  Vite storybook-static/assets/TableSearchPopover.stories-Doi56l3N.js
+│  22.60 kB │ gzip:   7.78 kB
+│  Vite storybook-static/vite-inject-mocker-entry.js
+│  28.11 kB │ gzip:   9.82 kB
+│  Vite storybook-static/assets/matchers-5TDFFDYO-N4FjKbka.js
+│  29.23 kB │ gzip:  10.05 kB
+│  Vite storybook-static/assets/Color-23OOGO2C-CxAnrBTa.js
+│  30.12 kB │ gzip:  11.44 kB
+│  Vite storybook-static/assets/PageSizeSelector.stories-DA5ssjuX.js
+│  30.58 kB │ gzip:  10.77 kB
+│  Vite storybook-static/assets/index-BD3E76hj.js
+│  31.60 kB │ gzip:   9.66 kB
+│  Vite storybook-static/assets/WithTooltip-65CFNBJE-BdLlIHry.js
+│  33.10 kB │ gzip:  11.66 kB
+│  Vite storybook-static/assets/index-DFZyjttN.js
+│  35.33 kB │ gzip:  13.16 kB
+│  Vite
+│  storybook-static/assets/ExpiringAnnouncementTooltip.stories-CgCdHSED.js
+│  37.37 kB │ gzip:  13.05 kB
+│  Vite storybook-static/assets/syntaxhighlighter-W7WJGI2T-D0V-hcdU.js
+│  78.56 kB │ gzip:  27.53 kB
+│  Vite storybook-static/assets/TreeSelect.stories-D_29c-sL.js
+│  251.29 kB │ gzip:  61.17 kB
+│  Vite storybook-static/assets/axe-klVbSP3S.js
+│  571.16 kB │ gzip: 157.45 kB
+│  Vite storybook-static/assets/DocsRenderer-LL677BLK-DgKbW_R6.js
+│  823.10 kB │ gzip: 263.60 kB
+│  Vite storybook-static/assets/data-COXK7HHN.js
+│  859.95 kB │ gzip:  69.38 kB
+│  Vite storybook-static/assets/iframe-oOq9hmcV.js
+│  2,332.96 kB │ gzip: 671.01 kB
+│
+▲  Vite
+│  (!) Some chunks are larger than 500 kB after minification. Consider:
+│  - Using dynamic import() to code-split the application
+│  - Use build.rollupOptions.output.manualChunks to improve chunking:
+│  https://rollupjs.org/configuration-options/#output-manualchunks
+│  - Adjust chunk size limit for this warning via
+│  build.chunkSizeWarningLimit.
+│  Vite ✓ built in 10.85s
+│
+◇  Output directory:
+│  /Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-05-07T10-00-12Z-e429caf5/project/packages/lib/storybook-static
+│
+└  Storybook build completed successfully
+
+
