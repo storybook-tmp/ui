@@ -1,0 +1,56 @@
+<script>
+  (() => {
+    if (window.Buffer) {
+      return;
+    }
+
+    const textEncoder = new TextEncoder();
+    const textDecoder = new TextDecoder();
+
+    class StorybookBuffer extends Uint8Array {
+      static from(value) {
+        if (typeof value === "string") {
+          return new StorybookBuffer(textEncoder.encode(value));
+        }
+        if (value instanceof ArrayBuffer) {
+          return new StorybookBuffer(value);
+        }
+        return new StorybookBuffer(value);
+      }
+
+      static alloc(size) {
+        return new StorybookBuffer(size);
+      }
+
+      static allocUnsafe(size) {
+        return new StorybookBuffer(size);
+      }
+
+      static concat(chunks, totalLength) {
+        const size =
+          totalLength ?? chunks.reduce((sum, chunk) => sum + chunk.length, 0);
+        const result = new StorybookBuffer(size);
+        let offset = 0;
+        chunks.forEach((chunk) => {
+          result.set(chunk, offset);
+          offset += chunk.length;
+        });
+        return result;
+      }
+
+      static isEncoding() {
+        return true;
+      }
+
+      slice(start, end) {
+        return new StorybookBuffer(super.slice(start, end));
+      }
+
+      toString() {
+        return textDecoder.decode(this);
+      }
+    }
+
+    window.Buffer = StorybookBuffer;
+  })();
+</script>
