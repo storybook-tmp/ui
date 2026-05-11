@@ -16,8 +16,8 @@
     "@leafygreen-ui/leafygreen-provider": "^5.0.4",
     "@storybook/addon-docs": "0.0.0-pr-34421-sha-0f73e3a9",
     "@storybook/addon-links": "0.0.0-pr-34421-sha-0f73e3a9",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
     "react-router-dom": "6.18.0",
     "storybook": "0.0.0-pr-34421-sha-0f73e3a9"
   },
