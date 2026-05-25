@@ -18,9 +18,9 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^5.2.0-next.0",
     "@evg-ui/storybook-addon": "workspace:*",
-    "@storybook/addon-a11y": "10.4.0-alpha.17",
-    "@storybook/addon-onboarding": "10.4.0-alpha.17",
-    "@storybook/addon-vitest": "10.4.0-alpha.17",
+    "@storybook/addon-a11y": "10.4.0-alpha.18",
+    "@storybook/addon-onboarding": "10.4.0-alpha.18",
+    "@storybook/addon-vitest": "10.4.0-alpha.18",
     "@storybook/react-vite": "10.4.0-alpha.17",
     "@vitest/browser": "4.1.2",
     "@vitest/browser-playwright": "4.1.2",
@@ -28,9 +28,9 @@
     "husky": "9.1.7",
     "lint-staged": "16.4.0",
     "playwright": "^1.58.2",
-    "storybook": "10.4.0-alpha.17",
+    "storybook": "10.4.0-alpha.18",
     "vitest": "^4.1.2",
-    "@storybook/addon-docs": "10.4.0-alpha.17",
+    "@storybook/addon-docs": "10.4.0-alpha.18",
     "eslint-plugin-storybook": "10.4.0-alpha.17"
   }
 }
