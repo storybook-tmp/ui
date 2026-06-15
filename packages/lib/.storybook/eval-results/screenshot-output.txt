@@ -1,0 +1,42 @@
+RUN  v4.1.2 /Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-02T16-03-29Z-a7a773ce/project/packages/lib
+
+11:20:56 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+Port 63315 is in use, trying another one...
+ ✓ |storybook (chromium)| src/components/PageSizeSelector/PageSizeSelector.stories.tsx (2 tests) 1534ms
+   ✓ Default  1109ms
+   ✓ Disabled  423ms
+ ✓ |storybook (chromium)| src/components/FullPageLoad/FullPageLoad.stories.tsx (2 tests) 1722ms
+   ✓ Default  1198ms
+   ✓ Inside Container  522ms
+ ✓ |storybook (chromium)| src/components/IconWithTooltip/IconWithTooltip.stories.tsx (2 tests) 1517ms
+   ✓ Default  993ms
+   ✓ Warning  522ms
+ ✓ |storybook (chromium)| src/components/TextInputWithGlyph/TextInputWithGlyph.stories.tsx (3 tests) 2038ms
+   ✓ Default  993ms
+   ✓ With Icon  522ms
+   ✓ Disabled  521ms
+ ✓ |storybook (chromium)| src/components/Pagination/Pagination.stories.tsx (3 tests) 1774ms
+   ✓ Default  805ms
+   ✓ Middle Page  646ms
+   ✓ Last Page  321ms
+ ✓ |storybook (chromium)| src/components/TreeSelect/TreeSelect.stories.tsx (3 tests) 2132ms
+   ✓ Default  1038ms
+   ✓ All Selected  687ms
+   ✓ Partial Selection  406ms
+ ✓ |storybook (chromium)| src/components/Badge/TestStatusBadge/TestStatusBadge.stories.tsx (4 tests) 2438ms
+   ✓ Pass  1188ms
+   ✓ Fail  386ms
+   ✓ Skip  567ms
+ ✓ |storybook (chromium)| src/components/Badge/TaskStatusBadge/TaskStatusBadge.stories.tsx (4 tests) 2478ms
+   ✓ Succeeded  1180ms
+   ✓ Failed  461ms
+   ✓ Started  591ms
+ ✓ |storybook (chromium)| src/components/Accordion/Accordion.stories.tsx (4 tests) 2399ms
+   ✓ Default  1110ms
+   ✓ Default Open  452ms
+   ✓ With Subtitle  591ms
+
+ Test Files  9 passed (9)
+      Tests  27 passed (27)
+   Start at  23:20:56
+   Duration  10.93s (transform 0ms, setup 28.86s, import 8.81s, tests 18.03s, environment 0ms)
