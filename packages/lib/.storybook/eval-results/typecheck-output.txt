@@ -1,0 +1,14 @@
+src/components/Accordion/Accordion.stories.tsx(1,37): error TS2307: Cannot find module '@storybook/react' or its corresponding type declarations.
+src/components/Badge/TaskStatusBadge/TaskStatusBadge.stories.ts(1,37): error TS2307: Cannot find module '@storybook/react' or its corresponding type declarations.
+src/components/Badge/TestStatusBadge/TestStatusBadge.stories.ts(1,37): error TS2307: Cannot find module '@storybook/react' or its corresponding type declarations.
+src/components/IconWithTooltip/IconWithTooltip.stories.ts(1,37): error TS2307: Cannot find module '@storybook/react' or its corresponding type declarations.
+src/components/PageSizeSelector/PageSizeSelector.stories.tsx(1,37): error TS2307: Cannot find module '@storybook/react' or its corresponding type declarations.
+src/components/Pagination/Pagination.stories.tsx(1,37): error TS2307: Cannot find module '@storybook/react' or its corresponding type declarations.
+src/components/Popconfirm/Popconfirm.stories.tsx(1,37): error TS2307: Cannot find module '@storybook/react' or its corresponding type declarations.
+src/components/Popconfirm/Popconfirm.stories.tsx(17,7): error TS2322: Type '{ children: Element; title: string; description: string; confirmText: string; onConfirm: () => void; }' is not assignable to type 'IntrinsicAttributes & { css?: Interpolation<Theme>; } & Omit<TooltipProps, "onEnter" | "onEntering" | "onEntered" | "onExit" | "onExiting" | "onExited"> & { ...; }'.
+  Property 'description' does not exist on type 'IntrinsicAttributes & { css?: Interpolation<Theme>; } & Omit<TooltipProps, "onEnter" | "onEntering" | "onEntered" | "onExit" | "onExiting" | "onExited"> & { ...; }'.
+src/components/TextInputWithGlyph/TextInputWithGlyph.stories.tsx(1,37): error TS2307: Cannot find module '@storybook/react' or its corresponding type declarations.
+src/components/TextInputWithGlyph/TextInputWithGlyph.stories.tsx(15,6): error TS2322: Type '{ placeholder: string; icon: Element; }' is not assignable to type 'IntrinsicAttributes & (({ css?: Interpolation<Theme>; } & Omit<{ icon?: ReactElement<any, string | JSXElementConstructor<any>> | undefined; persistentPlaceholder?: ReactNode; } & Omit<...> & Required<...> & Partial<...>, "ref"> & RefAttributes<...>) | ({ ...; } & ... 1 more ... & RefAttributes<...>) | ({ ...; } & .....'.
+  Property '"aria-labelledby"' is missing in type '{ placeholder: string; icon: Element; }' but required in type 'Omit<{ icon?: ReactElement<any, string | JSXElementConstructor<any>> | undefined; persistentPlaceholder?: ReactNode; } & Omit<BaseTextInputProps & ... 1 more ... & TextInputTypeProp, keyof AriaLabelProps> & Required<...> & Partial<...>, "ref">'.
+src/components/TreeSelect/TreeSelect.stories.tsx(1,37): error TS2307: Cannot find module '@storybook/react' or its corresponding type declarations.
+

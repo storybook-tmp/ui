@@ -1,0 +1,39 @@
+RUN  v4.1.2 /Users/kasperpeulen/code/storybook/storybook-eval/trials/2026-04-02T15-25-15Z-f54b142c/project/packages/lib
+
+10:37:28 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+ ✓ |storybook (chromium)| src/components/Badge/TaskStatusBadge/TaskStatusBadge.stories.ts (2 tests) 1122ms
+   ✓ Success  853ms
+ ✓ |storybook (chromium)| src/components/Badge/TestStatusBadge/TestStatusBadge.stories.ts (2 tests) 1168ms
+   ✓ Pass  852ms
+   ✓ Fail  314ms
+ ✓ |storybook (chromium)| src/components/TextInputWithGlyph/TextInputWithGlyph.stories.tsx (2 tests) 1047ms
+   ✓ With Icon  733ms
+   ✓ With Persistent Placeholder  312ms
+ ✓ |storybook (chromium)| src/components/Accordion/Accordion.stories.tsx (2 tests) 1153ms
+   ✓ Closed  838ms
+   ✓ Open  313ms
+ ✓ |storybook (chromium)| src/components/PageSizeSelector/PageSizeSelector.stories.tsx (2 tests) 1221ms
+   ✓ Default  925ms
+ ✓ |storybook (chromium)| src/components/Popconfirm/Popconfirm.stories.tsx (2 tests) 1133ms
+   ✓ Closed  796ms
+   ✓ Controlled  335ms
+ ✓ |storybook (chromium)| src/components/IconWithTooltip/IconWithTooltip.stories.ts (2 tests) 1130ms
+   ✓ With Info Icon  832ms
+ ✓ |storybook (chromium)| src/components/Pagination/Pagination.stories.tsx (2 tests) 1025ms
+   ✓ Default  779ms
+ ✓ |storybook (chromium)| src/components/TreeSelect/TreeSelect.stories.tsx (2 tests) 1129ms
+   ✓ Default  794ms
+   ✓ With Selection  333ms
+
+ Test Files  9 passed (9)
+      Tests  18 passed (18)
+   Start at  22:37:28
+   Duration  7.75s (transform 0ms, setup 15.48s, import 7.67s, tests 10.13s, environment 0ms)
+
+
+stderr | src/components/TextInputWithGlyph/TextInputWithGlyph.stories.tsx > With Icon
+For screen-reader accessibility, label or aria-labelledby must be provided to TextInput.
+stderr | src/components/TextInputWithGlyph/TextInputWithGlyph.stories.tsx > With Icon
+Error in Icon Could not find glyph named "Search" in the icon set. undefined
+stderr | src/components/TextInputWithGlyph/TextInputWithGlyph.stories.tsx > With Persistent Placeholder
+For screen-reader accessibility, label or aria-labelledby must be provided to TextInput.
